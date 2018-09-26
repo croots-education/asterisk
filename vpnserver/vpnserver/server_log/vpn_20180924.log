@@ -1,0 +1,251 @@
+2018-09-24 00:42:49.240 On the TCP Listener (Port 5555), a Client (IP address 94.156.90.119, Host name "94.156.90.119", Port number 59225) has connected.
+2018-09-24 00:42:49.240 For the client (IP address: 94.156.90.119, host name: "94.156.90.119", port number: 59225), connection "CID-652" has been created.
+2018-09-24 00:42:53.019 Connection "CID-652" has been terminated.
+2018-09-24 00:42:53.019 The connection with the client (IP address 94.156.90.119, Port number 59225) has been disconnected.
+2018-09-24 02:10:17.959 On the TCP Listener (Port 5555), a Client (IP address 176.237.144.107, Host name "176.237.144.107", Port number 24656) has connected.
+2018-09-24 02:10:17.959 For the client (IP address: 176.237.144.107, host name: "176.237.144.107", port number: 24656), connection "CID-653" has been created.
+2018-09-24 02:10:17.959 Connection "CID-653" has been terminated.
+2018-09-24 02:10:17.959 The connection with the client (IP address 176.237.144.107, Port number 24656) has been disconnected.
+2018-09-24 02:22:07.145 On the TCP Listener (Port 443), a Client (IP address 88.121.232.250, Host name "ve141-1-88-121-232-250.fbx.proxad.net", Port number 57520) has connected.
+2018-09-24 02:22:07.145 For the client (IP address: 88.121.232.250, host name: "ve141-1-88-121-232-250.fbx.proxad.net", port number: 57520), connection "CID-654" has been created.
+2018-09-24 02:22:10.954 SSL communication for connection "CID-654" has been started. The encryption algorithm name is "AES128-SHA".
+2018-09-24 02:22:13.316 Connection "CID-654" terminated by the cause "A client which is non-SoftEther VPN software has connected to the port." (code 5).
+2018-09-24 02:22:13.316 Connection "CID-654" has been terminated.
+2018-09-24 02:22:13.316 The connection with the client (IP address 88.121.232.250, Port number 57520) has been disconnected.
+2018-09-24 02:37:20.827 [HUB "VPN"] SecureNAT: The DHCP entry 11 has been created. MAC address: 02-01-85-82-67-A5, IP address: 192.168.30.10, host name: server, expiration span: 7200 seconds
+2018-09-24 02:37:20.827 [HUB "VPN"] Session "SID-SECURENAT-1": The DHCP server of host "5E-4B-D6-03-2C-96" (192.168.30.1) on this session allocated, for host "SID-LOCALBRIDGE-5" on another session "02-01-85-82-67-A5", the new IP address 192.168.30.10.
+2018-09-24 03:27:55.154 On the TCP Listener (Port 5555), a Client (IP address 172.58.201.138, Host name "172.58.201.138", Port number 27937) has connected.
+2018-09-24 03:27:55.154 For the client (IP address: 172.58.201.138, host name: "172.58.201.138", port number: 27937), connection "CID-655" has been created.
+2018-09-24 03:27:55.154 Connection "CID-655" has been terminated.
+2018-09-24 03:27:55.154 The connection with the client (IP address 172.58.201.138, Port number 27937) has been disconnected.
+2018-09-24 04:00:20.799 On the TCP Listener (Port 443), a Client (IP address 125.212.217.215, Host name "125.212.217.215", Port number 52396) has connected.
+2018-09-24 04:00:20.799 For the client (IP address: 125.212.217.215, host name: "125.212.217.215", port number: 52396), connection "CID-656" has been created.
+2018-09-24 04:00:21.600 SSL communication for connection "CID-656" has been started. The encryption algorithm name is "AES128-SHA".
+2018-09-24 04:00:22.675 On the TCP Listener (Port 443), a Client (IP address 125.212.217.215, Host name "125.212.217.215", Port number 53124) has connected.
+2018-09-24 04:00:22.675 For the client (IP address: 125.212.217.215, host name: "125.212.217.215", port number: 53124), connection "CID-657" has been created.
+2018-09-24 04:00:23.157 SSL communication for connection "CID-657" has been started. The encryption algorithm name is "AES128-SHA".
+2018-09-24 04:00:23.588 On the TCP Listener (Port 443), a Client (IP address 125.212.217.215, Host name "125.212.217.215", Port number 53474) has connected.
+2018-09-24 04:00:23.588 For the client (IP address: 125.212.217.215, host name: "125.212.217.215", port number: 53474), connection "CID-658" has been created.
+2018-09-24 04:00:23.710 SSL communication for connection "CID-658" has been started. The encryption algorithm name is "AES128-SHA".
+2018-09-24 04:00:23.850 Connection "CID-658" terminated by the cause "A client which is non-SoftEther VPN software has connected to the port." (code 5).
+2018-09-24 04:00:23.850 Connection "CID-658" has been terminated.
+2018-09-24 04:00:23.850 The connection with the client (IP address 125.212.217.215, Port number 53474) has been disconnected.
+2018-09-24 04:00:24.615 On the TCP Listener (Port 443), a Client (IP address 125.212.217.215, Host name "125.212.217.215", Port number 53990) has connected.
+2018-09-24 04:00:24.615 For the client (IP address: 125.212.217.215, host name: "125.212.217.215", port number: 53990), connection "CID-659" has been created.
+2018-09-24 04:00:24.615 Connection "CID-659" has been terminated.
+2018-09-24 04:00:24.615 The connection with the client (IP address 125.212.217.215, Port number 53990) has been disconnected.
+2018-09-24 04:00:24.836 Connection "CID-657" terminated by the cause "A client which is non-SoftEther VPN software has connected to the port." (code 5).
+2018-09-24 04:00:24.836 Connection "CID-657" has been terminated.
+2018-09-24 04:00:24.836 The connection with the client (IP address 125.212.217.215, Port number 53124) has been disconnected.
+2018-09-24 04:00:31.696 Connection "CID-656" terminated by the cause "A client which is non-SoftEther VPN software has connected to the port." (code 5).
+2018-09-24 04:00:31.696 Connection "CID-656" has been terminated.
+2018-09-24 04:00:31.696 The connection with the client (IP address 125.212.217.215, Port number 52396) has been disconnected.
+2018-09-24 04:21:03.785 On the TCP Listener (Port 5555), a Client (IP address 197.242.7.123, Host name "197.242.7.123", Port number 23109) has connected.
+2018-09-24 04:21:03.785 For the client (IP address: 197.242.7.123, host name: "197.242.7.123", port number: 23109), connection "CID-660" has been created.
+2018-09-24 04:21:03.785 Connection "CID-660" has been terminated.
+2018-09-24 04:21:03.785 The connection with the client (IP address 197.242.7.123, Port number 23109) has been disconnected.
+2018-09-24 04:33:23.879 On the TCP Listener (Port 5555), a Client (IP address 183.179.255.195, Host name "183179255195.ctinets.com", Port number 52617) has connected.
+2018-09-24 04:33:23.879 For the client (IP address: 183.179.255.195, host name: "183179255195.ctinets.com", port number: 52617), connection "CID-661" has been created.
+2018-09-24 04:33:23.879 Connection "CID-661" has been terminated.
+2018-09-24 04:33:23.879 The connection with the client (IP address 183.179.255.195, Port number 52617) has been disconnected.
+2018-09-24 04:50:48.259 On the TCP Listener (Port 5555), a Client (IP address 211.36.133.233, Host name "211.36.133.233", Port number 19396) has connected.
+2018-09-24 04:50:48.259 For the client (IP address: 211.36.133.233, host name: "211.36.133.233", port number: 19396), connection "CID-662" has been created.
+2018-09-24 04:50:48.259 Connection "CID-662" has been terminated.
+2018-09-24 04:50:48.259 The connection with the client (IP address 211.36.133.233, Port number 19396) has been disconnected.
+2018-09-24 04:56:12.308 On the TCP Listener (Port 5555), a Client (IP address 172.245.13.10, Host name "172-245-13-10-host.colocrossing.com", Port number 53749) has connected.
+2018-09-24 04:56:12.308 For the client (IP address: 172.245.13.10, host name: "172-245-13-10-host.colocrossing.com", port number: 53749), connection "CID-663" has been created.
+2018-09-24 04:56:12.308 Connection "CID-663" has been terminated.
+2018-09-24 04:56:12.308 The connection with the client (IP address 172.245.13.10, Port number 53749) has been disconnected.
+2018-09-24 04:56:12.359 On the TCP Listener (Port 5555), a Client (IP address 172.245.13.10, Host name "172-245-13-10-host.colocrossing.com", Port number 54035) has connected.
+2018-09-24 04:56:12.359 For the client (IP address: 172.245.13.10, host name: "172-245-13-10-host.colocrossing.com", port number: 54035), connection "CID-664" has been created.
+2018-09-24 04:56:12.359 Connection "CID-664" has been terminated.
+2018-09-24 04:56:12.359 The connection with the client (IP address 172.245.13.10, Port number 54035) has been disconnected.
+2018-09-24 04:56:12.727 On the TCP Listener (Port 5555), a Client (IP address 172.245.13.10, Host name "172-245-13-10-host.colocrossing.com", Port number 54873) has connected.
+2018-09-24 04:56:12.727 For the client (IP address: 172.245.13.10, host name: "172-245-13-10-host.colocrossing.com", port number: 54873), connection "CID-665" has been created.
+2018-09-24 04:56:12.727 Connection "CID-665" has been terminated.
+2018-09-24 04:56:12.727 The connection with the client (IP address 172.245.13.10, Port number 54873) has been disconnected.
+2018-09-24 04:56:13.084 On the TCP Listener (Port 5555), a Client (IP address 172.245.13.10, Host name "172-245-13-10-host.colocrossing.com", Port number 55586) has connected.
+2018-09-24 04:56:13.084 For the client (IP address: 172.245.13.10, host name: "172-245-13-10-host.colocrossing.com", port number: 55586), connection "CID-666" has been created.
+2018-09-24 04:56:13.084 Connection "CID-666" has been terminated.
+2018-09-24 04:56:13.084 The connection with the client (IP address 172.245.13.10, Port number 55586) has been disconnected.
+2018-09-24 05:32:35.106 On the TCP Listener (Port 5555), a Client (IP address 122.96.243.231, Host name "122.96.243.231", Port number 56508) has connected.
+2018-09-24 05:32:35.106 For the client (IP address: 122.96.243.231, host name: "122.96.243.231", port number: 56508), connection "CID-667" has been created.
+2018-09-24 05:32:35.106 Connection "CID-667" has been terminated.
+2018-09-24 05:32:35.106 The connection with the client (IP address 122.96.243.231, Port number 56508) has been disconnected.
+2018-09-24 06:11:11.100 On the TCP Listener (Port 5555), a Client (IP address 197.5.201.249, Host name "197.5.201.249", Port number 52972) has connected.
+2018-09-24 06:11:11.100 For the client (IP address: 197.5.201.249, host name: "197.5.201.249", port number: 52972), connection "CID-668" has been created.
+2018-09-24 06:11:11.100 Connection "CID-668" has been terminated.
+2018-09-24 06:11:11.100 The connection with the client (IP address 197.5.201.249, Port number 52972) has been disconnected.
+2018-09-24 06:11:12.653 On the TCP Listener (Port 5555), a Client (IP address 197.5.201.249, Host name "197.5.201.249", Port number 52973) has connected.
+2018-09-24 06:11:12.653 For the client (IP address: 197.5.201.249, host name: "197.5.201.249", port number: 52973), connection "CID-669" has been created.
+2018-09-24 06:11:13.142 Connection "CID-669" has been terminated.
+2018-09-24 06:11:13.142 The connection with the client (IP address 197.5.201.249, Port number 52973) has been disconnected.
+2018-09-24 06:21:14.545 On the TCP Listener (Port 5555), a Client (IP address 172.58.170.61, Host name "172.58.170.61", Port number 35194) has connected.
+2018-09-24 06:21:14.545 For the client (IP address: 172.58.170.61, host name: "172.58.170.61", port number: 35194), connection "CID-670" has been created.
+2018-09-24 06:21:14.545 Connection "CID-670" has been terminated.
+2018-09-24 06:21:14.545 The connection with the client (IP address 172.58.170.61, Port number 35194) has been disconnected.
+2018-09-24 09:11:37.366 On the TCP Listener (Port 443), a Client (IP address 84.22.44.201, Host name "84.22.44.201", Port number 65312) has connected.
+2018-09-24 09:11:37.366 For the client (IP address: 84.22.44.201, host name: "84.22.44.201", port number: 65312), connection "CID-671" has been created.
+2018-09-24 09:11:37.366 Connection "CID-671" has been terminated.
+2018-09-24 09:11:37.366 The connection with the client (IP address 84.22.44.201, Port number 65312) has been disconnected.
+2018-09-24 09:11:38.258 On the TCP Listener (Port 443), a Client (IP address 84.22.44.201, Host name "84.22.44.201", Port number 64416) has connected.
+2018-09-24 09:11:38.258 For the client (IP address: 84.22.44.201, host name: "84.22.44.201", port number: 64416), connection "CID-672" has been created.
+2018-09-24 09:11:38.258 Connection "CID-672" has been terminated.
+2018-09-24 09:11:38.258 The connection with the client (IP address 84.22.44.201, Port number 64416) has been disconnected.
+2018-09-24 09:37:09.867 On the TCP Listener (Port 5555), a Client (IP address 190.151.15.82, Host name "190.151.15.82", Port number 40196) has connected.
+2018-09-24 09:37:09.867 For the client (IP address: 190.151.15.82, host name: "190.151.15.82", port number: 40196), connection "CID-673" has been created.
+2018-09-24 09:37:09.867 Connection "CID-673" has been terminated.
+2018-09-24 09:37:09.867 The connection with the client (IP address 190.151.15.82, Port number 40196) has been disconnected.
+2018-09-24 11:17:07.198 IPsec Client 20 (216.218.206.82:55796 -> 133.130.103.182:500): A new IPsec client is created.
+2018-09-24 11:17:07.198 IPsec Client 20 (216.218.206.82:55796 -> 133.130.103.182:500): There are no acceptable transform proposals from the client for establishing an IKE SA.
+2018-09-24 11:17:18.345 IPsec Client 20 (216.218.206.82:55796 -> 133.130.103.182:500): This IPsec Client is deleted.
+2018-09-24 11:46:35.945 On the TCP Listener (Port 5555), a Client (IP address 221.213.44.226, Host name "221.213.44.226", Port number 60446) has connected.
+2018-09-24 11:46:35.945 For the client (IP address: 221.213.44.226, host name: "221.213.44.226", port number: 60446), connection "CID-674" has been created.
+2018-09-24 11:46:35.955 Connection "CID-674" has been terminated.
+2018-09-24 11:46:35.955 The connection with the client (IP address 221.213.44.226, Port number 60446) has been disconnected.
+2018-09-24 11:57:11.386 On the TCP Listener (Port 5555), a Client (IP address 74.82.47.3, Host name "scan-10.shadowserver.org", Port number 56010) has connected.
+2018-09-24 11:57:11.386 For the client (IP address: 74.82.47.3, host name: "scan-10.shadowserver.org", port number: 56010), connection "CID-675" has been created.
+2018-09-24 11:57:11.406 Connection "CID-675" has been terminated.
+2018-09-24 11:57:11.406 The connection with the client (IP address 74.82.47.3, Port number 56010) has been disconnected.
+2018-09-24 12:50:13.474 On the TCP Listener (Port 5555), a Client (IP address 172.58.153.210, Host name "172.58.153.210", Port number 43627) has connected.
+2018-09-24 12:50:13.474 For the client (IP address: 172.58.153.210, host name: "172.58.153.210", port number: 43627), connection "CID-676" has been created.
+2018-09-24 12:50:13.474 Connection "CID-676" has been terminated.
+2018-09-24 12:50:13.474 The connection with the client (IP address 172.58.153.210, Port number 43627) has been disconnected.
+2018-09-24 13:40:23.639 On the TCP Listener (Port 5555), a Client (IP address 223.171.41.226, Host name "223.171.41.226", Port number 54065) has connected.
+2018-09-24 13:40:23.639 For the client (IP address: 223.171.41.226, host name: "223.171.41.226", port number: 54065), connection "CID-677" has been created.
+2018-09-24 13:40:23.639 Connection "CID-677" has been terminated.
+2018-09-24 13:40:23.639 The connection with the client (IP address 223.171.41.226, Port number 54065) has been disconnected.
+2018-09-24 14:55:14.270 On the TCP Listener (Port 5555), a Client (IP address 123.24.146.242, Host name "123.24.146.242", Port number 48760) has connected.
+2018-09-24 14:55:14.270 For the client (IP address: 123.24.146.242, host name: "123.24.146.242", port number: 48760), connection "CID-678" has been created.
+2018-09-24 14:55:14.270 Connection "CID-678" has been terminated.
+2018-09-24 14:55:14.270 The connection with the client (IP address 123.24.146.242, Port number 48760) has been disconnected.
+2018-09-24 14:55:41.041 On the TCP Listener (Port 443), a Client (IP address 45.33.49.106, Host name "li999-106.members.linode.com", Port number 49438) has connected.
+2018-09-24 14:55:41.041 For the client (IP address: 45.33.49.106, host name: "li999-106.members.linode.com", port number: 49438), connection "CID-679" has been created.
+2018-09-24 14:55:41.182 SSL communication for connection "CID-679" has been started. The encryption algorithm name is "AES128-SHA".
+2018-09-24 14:55:41.348 Connection "CID-679" terminated by the cause "A client which is non-SoftEther VPN software has connected to the port." (code 5).
+2018-09-24 14:55:41.348 Connection "CID-679" has been terminated.
+2018-09-24 14:55:41.348 The connection with the client (IP address 45.33.49.106, Port number 49438) has been disconnected.
+2018-09-24 15:03:31.709 On the TCP Listener (Port 5555), a Client (IP address 176.237.82.52, Host name "176.237.82.52", Port number 1904) has connected.
+2018-09-24 15:03:31.709 For the client (IP address: 176.237.82.52, host name: "176.237.82.52", port number: 1904), connection "CID-680" has been created.
+2018-09-24 15:03:31.709 Connection "CID-680" has been terminated.
+2018-09-24 15:03:31.709 The connection with the client (IP address 176.237.82.52, Port number 1904) has been disconnected.
+2018-09-24 15:10:46.323 On the TCP Listener (Port 443), a Client (IP address 162.243.145.38, Host name "zg-0906b-1.stretchoid.com", Port number 42728) has connected.
+2018-09-24 15:10:46.323 For the client (IP address: 162.243.145.38, host name: "zg-0906b-1.stretchoid.com", port number: 42728), connection "CID-681" has been created.
+2018-09-24 15:10:47.411 SSL communication for connection "CID-681" has been started. The encryption algorithm name is "AES128-SHA".
+2018-09-24 15:10:56.674 Connection "CID-681" terminated by the cause "A client which is non-SoftEther VPN software has connected to the port." (code 5).
+2018-09-24 15:10:56.674 Connection "CID-681" has been terminated.
+2018-09-24 15:10:56.674 The connection with the client (IP address 162.243.145.38, Port number 42728) has been disconnected.
+2018-09-24 15:57:07.700 On the TCP Listener (Port 5555), a Client (IP address 60.179.2.246, Host name "246.2.179.60.broad.nb.zj.dynamic.163data.com.cn", Port number 41450) has connected.
+2018-09-24 15:57:07.700 For the client (IP address: 60.179.2.246, host name: "246.2.179.60.broad.nb.zj.dynamic.163data.com.cn", port number: 41450), connection "CID-682" has been created.
+2018-09-24 15:57:09.887 Connection "CID-682" has been terminated.
+2018-09-24 15:57:09.887 The connection with the client (IP address 60.179.2.246, Port number 41450) has been disconnected.
+2018-09-24 15:57:10.163 On the TCP Listener (Port 5555), a Client (IP address 60.179.2.246, Host name "246.2.179.60.broad.nb.zj.dynamic.163data.com.cn", Port number 41460) has connected.
+2018-09-24 15:57:10.163 For the client (IP address: 60.179.2.246, host name: "246.2.179.60.broad.nb.zj.dynamic.163data.com.cn", port number: 41460), connection "CID-683" has been created.
+2018-09-24 15:57:10.183 Connection "CID-683" has been terminated.
+2018-09-24 15:57:10.183 The connection with the client (IP address 60.179.2.246, Port number 41460) has been disconnected.
+2018-09-24 15:57:14.827 On the TCP Listener (Port 5555), a Client (IP address 60.179.2.246, Host name "246.2.179.60.broad.nb.zj.dynamic.163data.com.cn", Port number 41474) has connected.
+2018-09-24 15:57:14.827 For the client (IP address: 60.179.2.246, host name: "246.2.179.60.broad.nb.zj.dynamic.163data.com.cn", port number: 41474), connection "CID-684" has been created.
+2018-09-24 15:57:14.847 Connection "CID-684" has been terminated.
+2018-09-24 15:57:14.847 The connection with the client (IP address 60.179.2.246, Port number 41474) has been disconnected.
+2018-09-24 16:30:39.012 IPsec Client 21 (180.102.35.26:57307 -> 133.130.103.182:500): A new IPsec client is created.
+2018-09-24 16:30:39.023 IPsec IKE Session (IKE SA) 8 (Client: 21) (180.102.35.26:57307 -> 133.130.103.182:500): A new IKE SA (Main Mode) is created. Initiator Cookie: 0x53EDBB9BE997C60E, Responder Cookie: 0x9193890DF1728E7D, DH Group: MODP 1024 (Group 2), Hash Algorithm: SHA-1, Cipher Algorithm: 3DES-CBC, Cipher Key Size: 192 bits, Lifetime: 4294967295 Kbytes or 28800 seconds
+2018-09-24 16:30:39.776 On the TCP Listener (Port 443), a Client (IP address 1.85.218.101, Host name "1.85.218.101", Port number 23389) has connected.
+2018-09-24 16:30:39.776 For the client (IP address: 1.85.218.101, host name: "1.85.218.101", port number: 23389), connection "CID-685" has been created.
+2018-09-24 16:30:40.017 Connection "CID-685" has been terminated.
+2018-09-24 16:30:40.017 The connection with the client (IP address 1.85.218.101, Port number 23389) has been disconnected.
+2018-09-24 16:30:49.031 IPsec IKE Session (IKE SA) 8 (Client: 21) (180.102.35.26:57307 -> 133.130.103.182:500): This IKE SA is deleted.
+2018-09-24 16:30:49.031 IPsec Client 21 (180.102.35.26:57307 -> 133.130.103.182:500): This IPsec Client is deleted.
+2018-09-24 17:11:47.762 On the TCP Listener (Port 5555), a Client (IP address 202.62.17.7, Host name "202.62.17.7", Port number 49924) has connected.
+2018-09-24 17:11:47.762 For the client (IP address: 202.62.17.7, host name: "202.62.17.7", port number: 49924), connection "CID-686" has been created.
+2018-09-24 17:11:47.762 Connection "CID-686" has been terminated.
+2018-09-24 17:11:47.762 The connection with the client (IP address 202.62.17.7, Port number 49924) has been disconnected.
+2018-09-24 18:04:19.879 On the TCP Listener (Port 5555), a Client (IP address 188.56.199.76, Host name "188.56.199.76", Port number 38314) has connected.
+2018-09-24 18:04:19.879 For the client (IP address: 188.56.199.76, host name: "188.56.199.76", port number: 38314), connection "CID-687" has been created.
+2018-09-24 18:04:19.879 Connection "CID-687" has been terminated.
+2018-09-24 18:04:19.879 The connection with the client (IP address 188.56.199.76, Port number 38314) has been disconnected.
+2018-09-24 18:42:21.876 On the TCP Listener (Port 5555), a Client (IP address 42.3.83.230, Host name "42-3-83-230.static.netvigator.com", Port number 48694) has connected.
+2018-09-24 18:42:21.876 For the client (IP address: 42.3.83.230, host name: "42-3-83-230.static.netvigator.com", port number: 48694), connection "CID-689" has been created.
+2018-09-24 18:42:21.876 Connection "CID-689" has been terminated.
+2018-09-24 18:42:21.876 The connection with the client (IP address 42.3.83.230, Port number 48694) has been disconnected.
+2018-09-24 18:42:21.876 On the TCP Listener (Port 5555), a Client (IP address 42.3.83.230, Host name "42-3-83-230.static.netvigator.com", Port number 48691) has connected.
+2018-09-24 18:42:21.876 For the client (IP address: 42.3.83.230, host name: "42-3-83-230.static.netvigator.com", port number: 48691), connection "CID-688" has been created.
+2018-09-24 18:42:23.961 Connection "CID-688" has been terminated.
+2018-09-24 18:42:23.961 The connection with the client (IP address 42.3.83.230, Port number 48691) has been disconnected.
+2018-09-24 18:42:24.012 On the TCP Listener (Port 5555), a Client (IP address 42.3.83.230, Host name "42-3-83-230.static.netvigator.com", Port number 48701) has connected.
+2018-09-24 18:42:24.012 For the client (IP address: 42.3.83.230, host name: "42-3-83-230.static.netvigator.com", port number: 48701), connection "CID-690" has been created.
+2018-09-24 18:42:24.012 Connection "CID-690" has been terminated.
+2018-09-24 18:42:24.012 The connection with the client (IP address 42.3.83.230, Port number 48701) has been disconnected.
+2018-09-24 18:42:26.217 On the TCP Listener (Port 5555), a Client (IP address 42.3.83.230, Host name "42-3-83-230.static.netvigator.com", Port number 48708) has connected.
+2018-09-24 18:42:26.217 For the client (IP address: 42.3.83.230, host name: "42-3-83-230.static.netvigator.com", port number: 48708), connection "CID-691" has been created.
+2018-09-24 18:42:26.217 Connection "CID-691" has been terminated.
+2018-09-24 18:42:26.217 The connection with the client (IP address 42.3.83.230, Port number 48708) has been disconnected.
+2018-09-24 18:42:28.504 On the TCP Listener (Port 5555), a Client (IP address 42.3.83.230, Host name "42-3-83-230.static.netvigator.com", Port number 48716) has connected.
+2018-09-24 18:42:28.504 For the client (IP address: 42.3.83.230, host name: "42-3-83-230.static.netvigator.com", port number: 48716), connection "CID-692" has been created.
+2018-09-24 18:42:28.504 Connection "CID-692" has been terminated.
+2018-09-24 18:42:28.504 The connection with the client (IP address 42.3.83.230, Port number 48716) has been disconnected.
+2018-09-24 19:53:23.656 On the TCP Listener (Port 5555), a Client (IP address 172.58.153.164, Host name "172.58.153.164", Port number 29477) has connected.
+2018-09-24 19:53:23.656 For the client (IP address: 172.58.153.164, host name: "172.58.153.164", port number: 29477), connection "CID-693" has been created.
+2018-09-24 19:53:23.656 Connection "CID-693" has been terminated.
+2018-09-24 19:53:23.656 The connection with the client (IP address 172.58.153.164, Port number 29477) has been disconnected.
+2018-09-24 20:33:16.187 On the TCP Listener (Port 992), a Client (IP address 107.170.236.202, Host name "zg-0906d-40.stretchoid.com", Port number 58532) has connected.
+2018-09-24 20:33:16.187 For the client (IP address: 107.170.236.202, host name: "zg-0906d-40.stretchoid.com", port number: 58532), connection "CID-694" has been created.
+2018-09-24 20:33:25.956 Connection "CID-694" has been terminated.
+2018-09-24 20:33:25.956 The connection with the client (IP address 107.170.236.202, Port number 58532) has been disconnected.
+2018-09-24 20:45:31.198 On the TCP Listener (Port 5555), a Client (IP address 213.43.169.136, Host name "213.43.169.136", Port number 43732) has connected.
+2018-09-24 20:45:31.198 For the client (IP address: 213.43.169.136, host name: "213.43.169.136", port number: 43732), connection "CID-695" has been created.
+2018-09-24 20:45:31.208 Connection "CID-695" has been terminated.
+2018-09-24 20:45:31.208 The connection with the client (IP address 213.43.169.136, Port number 43732) has been disconnected.
+2018-09-24 21:22:33.398 On the TCP Listener (Port 5555), a Client (IP address 86.57.254.233, Host name "mm-233-254-57-86.static.mgts.by", Port number 34631) has connected.
+2018-09-24 21:22:33.398 For the client (IP address: 86.57.254.233, host name: "mm-233-254-57-86.static.mgts.by", port number: 34631), connection "CID-696" has been created.
+2018-09-24 21:22:33.398 Connection "CID-696" has been terminated.
+2018-09-24 21:22:33.398 The connection with the client (IP address 86.57.254.233, Port number 34631) has been disconnected.
+2018-09-24 22:33:23.372 On the TCP Listener (Port 5555), a Client (IP address 185.222.209.35, Host name "185.222.209.35", Port number 62457) has connected.
+2018-09-24 22:33:23.372 For the client (IP address: 185.222.209.35, host name: "185.222.209.35", port number: 62457), connection "CID-697" has been created.
+2018-09-24 22:33:23.372 Connection "CID-697" has been terminated.
+2018-09-24 22:33:23.372 The connection with the client (IP address 185.222.209.35, Port number 62457) has been disconnected.
+2018-09-24 22:34:21.581 On the TCP Listener (Port 443), a Client (IP address 184.105.247.195, Host name "scan-14.shadowserver.org", Port number 20124) has connected.
+2018-09-24 22:34:21.581 For the client (IP address: 184.105.247.195, host name: "scan-14.shadowserver.org", port number: 20124), connection "CID-698" has been created.
+2018-09-24 22:34:23.592 SSL communication for connection "CID-698" has been started. The encryption algorithm name is "AES128-SHA".
+2018-09-24 22:34:25.466 Connection "CID-698" terminated by the cause "A client which is non-SoftEther VPN software has connected to the port." (code 5).
+2018-09-24 22:34:25.466 Connection "CID-698" has been terminated.
+2018-09-24 22:34:25.466 The connection with the client (IP address 184.105.247.195, Port number 20124) has been disconnected.
+2018-09-24 22:38:02.296 On the TCP Listener (Port 443), a Client (IP address 184.105.247.195, Host name "scan-14.shadowserver.org", Port number 33198) has connected.
+2018-09-24 22:38:02.296 For the client (IP address: 184.105.247.195, host name: "scan-14.shadowserver.org", port number: 33198), connection "CID-699" has been created.
+2018-09-24 22:38:02.360 Connection "CID-699" has been terminated.
+2018-09-24 22:38:02.360 The connection with the client (IP address 184.105.247.195, Port number 33198) has been disconnected.
+2018-09-24 22:38:31.160 On the TCP Listener (Port 443), a Client (IP address 184.105.247.195, Host name "scan-14.shadowserver.org", Port number 29294) has connected.
+2018-09-24 22:38:31.160 For the client (IP address: 184.105.247.195, host name: "scan-14.shadowserver.org", port number: 29294), connection "CID-700" has been created.
+2018-09-24 22:38:31.160 Connection "CID-700" has been terminated.
+2018-09-24 22:38:31.160 The connection with the client (IP address 184.105.247.195, Port number 29294) has been disconnected.
+2018-09-24 22:38:41.033 On the TCP Listener (Port 5555), a Client (IP address 41.246.137.90, Host name "41.246.137.90", Port number 17094) has connected.
+2018-09-24 22:38:41.033 For the client (IP address: 41.246.137.90, host name: "41.246.137.90", port number: 17094), connection "CID-701" has been created.
+2018-09-24 22:38:41.033 Connection "CID-701" has been terminated.
+2018-09-24 22:38:41.033 The connection with the client (IP address 41.246.137.90, Port number 17094) has been disconnected.
+2018-09-24 22:42:44.047 On the TCP Listener (Port 1194), a Client (IP address 0.0.0.0, Host name "0.0.0.0", Port number 0) has connected.
+2018-09-24 22:42:44.047 For the client (IP address: 0.0.0.0, host name: "0.0.0.0", port number: 0), connection "CID-702" has been created.
+2018-09-24 22:42:44.047 OpenVPN Module: The OpenVPN Server Module is starting.
+2018-09-24 22:42:44.047 OpenVPN Module: The OpenVPN Server Module is stopped.
+2018-09-24 22:42:44.047 Connection "CID-702" has been terminated.
+2018-09-24 22:42:44.047 The connection with the client (IP address 0.0.0.0, Port number 0) has been disconnected.
+2018-09-24 22:50:14.326 [HUB "VPN"] SecureNAT: The DHCP entry 12 has been created. MAC address: 02-01-85-82-67-A5, IP address: 192.168.30.10, host name: server, expiration span: 7200 seconds
+2018-09-24 22:50:14.326 [HUB "VPN"] Session "SID-SECURENAT-1": The DHCP server of host "5E-4B-D6-03-2C-96" (192.168.30.1) on this session allocated, for host "SID-LOCALBRIDGE-5" on another session "02-01-85-82-67-A5", the new IP address 192.168.30.10.
+2018-09-24 23:36:18.850 On the TCP Listener (Port 5555), a Client (IP address 141.196.150.183, Host name "141.196.150.183", Port number 40956) has connected.
+2018-09-24 23:36:18.850 For the client (IP address: 141.196.150.183, host name: "141.196.150.183", port number: 40956), connection "CID-703" has been created.
+2018-09-24 23:36:18.850 Connection "CID-703" has been terminated.
+2018-09-24 23:36:18.850 The connection with the client (IP address 141.196.150.183, Port number 40956) has been disconnected.
+2018-09-24 23:39:21.644 On the TCP Listener (Port 5555), a Client (IP address 175.15.192.5, Host name "175.15.192.5", Port number 51483) has connected.
+2018-09-24 23:39:21.644 For the client (IP address: 175.15.192.5, host name: "175.15.192.5", port number: 51483), connection "CID-704" has been created.
+2018-09-24 23:39:21.644 Connection "CID-704" has been terminated.
+2018-09-24 23:39:21.644 The connection with the client (IP address 175.15.192.5, Port number 51483) has been disconnected.
+2018-09-24 23:39:22.140 On the TCP Listener (Port 5555), a Client (IP address 175.15.192.5, Host name "175.15.192.5", Port number 51484) has connected.
+2018-09-24 23:39:22.140 For the client (IP address: 175.15.192.5, host name: "175.15.192.5", port number: 51484), connection "CID-705" has been created.
+2018-09-24 23:39:22.140 Connection "CID-705" has been terminated.
+2018-09-24 23:39:22.140 The connection with the client (IP address 175.15.192.5, Port number 51484) has been disconnected.
+2018-09-24 23:39:22.553 On the TCP Listener (Port 5555), a Client (IP address 175.15.192.5, Host name "175.15.192.5", Port number 51486) has connected.
+2018-09-24 23:39:22.553 For the client (IP address: 175.15.192.5, host name: "175.15.192.5", port number: 51486), connection "CID-706" has been created.
+2018-09-24 23:39:22.584 Connection "CID-706" has been terminated.
+2018-09-24 23:39:22.584 The connection with the client (IP address 175.15.192.5, Port number 51486) has been disconnected.
+2018-09-24 23:49:51.461 On the TCP Listener (Port 5555), a Client (IP address 2.70.105.220, Host name "2.70.105.220.mobile.tre.se", Port number 41025) has connected.
+2018-09-24 23:49:51.461 For the client (IP address: 2.70.105.220, host name: "2.70.105.220.mobile.tre.se", port number: 41025), connection "CID-707" has been created.
+2018-09-24 23:49:51.461 Connection "CID-707" has been terminated.
+2018-09-24 23:49:51.461 The connection with the client (IP address 2.70.105.220, Port number 41025) has been disconnected.

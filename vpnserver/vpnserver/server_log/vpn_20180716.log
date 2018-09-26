@@ -1,0 +1,396 @@
+2018-07-16 18:01:49.302 ------------------------------------------------------
+2018-07-16 18:01:49.302 SoftEther VPN Server Version 4.27 Build 9668   (English)
+2018-07-16 18:01:49.302 Compiled 2018/05/29 21:51:20 by yagi at pc33
+2018-07-16 18:01:49.302 Log Messages are written with UTF-8 Encoding Format.
+2018-07-16 18:01:49.302 The SoftEther VPN Server has been started.
+2018-07-16 18:01:49.302 IPsec Module: The IPsec ver 2.0 (ISAKMP/IKEv1) processing module is started.
+2018-07-16 18:01:49.302 OpenVPN Module: The OpenVPN Server Module is starting.
+2018-07-16 18:01:49.302 Loading the configuration file.
+2018-07-16 18:01:49.302 Monitoring the directory "/usr/local/vpnserver". If the amount of available free disk space becomes less than 100.00 MBytes, the backup files for log files and configurations that are saved on the sub-directories of this directory will be automatically deleted in the order of oldest first. The amount of free disk space that determines when to start deletion can be modified by changing the "AutoDeleteCheckDiskFreeSpaceMin" item in the configuration file.
+2018-07-16 18:01:49.312 Virtual Hub "VPN" has been started.
+2018-07-16 18:01:49.312 The MAC address of Virtual Hub "VPN" is "00-AE-0C-9E-F2-36".
+2018-07-16 18:01:49.312 [HUB "VPN"] SecureNAT has started. The SecureNAT session "SID-SECURENAT-1" was created.
+2018-07-16 18:01:49.312 [HUB "VPN"] The Virtual Hub is now online.
+2018-07-16 18:01:49.312 TCP Listener (port 443) is starting.
+2018-07-16 18:01:49.312 TCP Listener (port 443) has started. Now listening for connection from client.
+2018-07-16 18:01:49.312 TCP Listener (port 992) is starting.
+2018-07-16 18:01:49.312 TCP Listener (port 992) has started. Now listening for connection from client.
+2018-07-16 18:01:49.312 TCP Listener (port 1194) is starting.
+2018-07-16 18:01:49.312 TCP Listener (port 1194) has started. Now listening for connection from client.
+2018-07-16 18:01:49.312 TCP Listener (port 5555) is starting.
+2018-07-16 18:01:49.312 TCP Listener (port 5555) has started. Now listening for connection from client.
+2018-07-16 18:01:49.312 The configuration file has been loaded.
+2018-07-16 18:01:49.312 Starting the automatically saving background task. The interval between auto-saves is 300 seconds. You can change the interval by changing the parameter AutoSaveConfigSpan in the configuration file.
+2018-07-16 18:01:55.890 [HUB "VPN"] SecureNAT: It has been detected that the Kernel-mode NAT for SecureNAT can be run on the interface "ipv4_rawsocket_virtual_router". The Kernel-mode NAT is starting. The TCP, UDP and ICMP NAT processings will be performed with high-performance via Kernel-Mode hereafter. The parameters of Kernel-mode NAT: IP Address = "10.171.7.254", Subnet Mask = "255.255.255.252", Default Gateway = "10.171.7.253", Broadcast Address = "10.171.7.255", Virtual MAC Address: "DA-D7-EF-36-CE-D4", DHCP Server Address: "10.171.7.253", DNS Server Address: "157.7.180.133"
+2018-07-16 18:04:38.276 On the TCP Listener (Port 5555), a Client (IP address 211.36.130.48, Host name "211.36.130.48", Port number 7674) has connected.
+2018-07-16 18:04:38.276 For the client (IP address: 211.36.130.48, host name: "211.36.130.48", port number: 7674), connection "CID-1" has been created.
+2018-07-16 18:04:38.276 Connection "CID-1" has been terminated.
+2018-07-16 18:04:38.276 The connection with the client (IP address 211.36.130.48, Port number 7674) has been disconnected.
+2018-07-16 18:13:18.159 On the TCP Listener (Port 5555), a Client (IP address 37.218.82.47, Host name "37.218.82.47", Port number 5318) has connected.
+2018-07-16 18:13:18.159 For the client (IP address: 37.218.82.47, host name: "37.218.82.47", port number: 5318), connection "CID-2" has been created.
+2018-07-16 18:13:18.159 Connection "CID-2" has been terminated.
+2018-07-16 18:13:18.159 The connection with the client (IP address 37.218.82.47, Port number 5318) has been disconnected.
+2018-07-16 18:17:48.434 On the TCP Listener (Port 5555), a Client (IP address 117.111.16.22, Host name "117.111.16.22", Port number 64040) has connected.
+2018-07-16 18:17:48.434 For the client (IP address: 117.111.16.22, host name: "117.111.16.22", port number: 64040), connection "CID-3" has been created.
+2018-07-16 18:17:48.434 Connection "CID-3" has been terminated.
+2018-07-16 18:17:48.434 The connection with the client (IP address 117.111.16.22, Port number 64040) has been disconnected.
+2018-07-16 18:41:14.294 On the TCP Listener (Port 5555), a Client (IP address 211.36.142.112, Host name "211.36.142.112", Port number 28064) has connected.
+2018-07-16 18:41:14.294 For the client (IP address: 211.36.142.112, host name: "211.36.142.112", port number: 28064), connection "CID-4" has been created.
+2018-07-16 18:41:14.294 Connection "CID-4" has been terminated.
+2018-07-16 18:41:14.294 The connection with the client (IP address 211.36.142.112, Port number 28064) has been disconnected.
+2018-07-16 18:45:45.567 On the TCP Listener (Port 443), a Client (IP address 62.32.81.83, Host name "62.32.81.83", Port number 48685) has connected.
+2018-07-16 18:45:45.567 For the client (IP address: 62.32.81.83, host name: "62.32.81.83", port number: 48685), connection "CID-5" has been created.
+2018-07-16 18:45:46.576 Connection "CID-5" has been terminated.
+2018-07-16 18:45:46.576 The connection with the client (IP address 62.32.81.83, Port number 48685) has been disconnected.
+2018-07-16 18:47:23.218 On the TCP Listener (Port 5555), a Client (IP address 172.58.142.162, Host name "172.58.142.162", Port number 36828) has connected.
+2018-07-16 18:47:23.218 For the client (IP address: 172.58.142.162, host name: "172.58.142.162", port number: 36828), connection "CID-6" has been created.
+2018-07-16 18:47:23.218 Connection "CID-6" has been terminated.
+2018-07-16 18:47:23.218 The connection with the client (IP address 172.58.142.162, Port number 36828) has been disconnected.
+2018-07-16 18:53:30.055 On the TCP Listener (Port 443), a Client (IP address 192.241.234.62, Host name "zg-0711a-37.stretchoid.com", Port number 57190) has connected.
+2018-07-16 18:53:30.055 For the client (IP address: 192.241.234.62, host name: "zg-0711a-37.stretchoid.com", port number: 57190), connection "CID-7" has been created.
+2018-07-16 18:53:31.629 SSL communication for connection "CID-7" has been started. The encryption algorithm name is "AES128-SHA".
+2018-07-16 18:53:40.487 Connection "CID-7" terminated by the cause "A client which is non-SoftEther VPN software has connected to the port." (code 5).
+2018-07-16 18:53:40.487 Connection "CID-7" has been terminated.
+2018-07-16 18:53:40.487 The connection with the client (IP address 192.241.234.62, Port number 57190) has been disconnected.
+2018-07-16 19:06:11.661 On the TCP Listener (Port 5555), a Client (IP address 83.223.234.127, Host name "83.223.234.127", Port number 53511) has connected.
+2018-07-16 19:06:11.661 For the client (IP address: 83.223.234.127, host name: "83.223.234.127", port number: 53511), connection "CID-8" has been created.
+2018-07-16 19:06:11.661 Connection "CID-8" has been terminated.
+2018-07-16 19:06:11.661 The connection with the client (IP address 83.223.234.127, Port number 53511) has been disconnected.
+2018-07-16 19:19:59.032 On the TCP Listener (Port 443), a Client (IP address 62.32.81.83, Host name "62.32.81.83", Port number 40607) has connected.
+2018-07-16 19:19:59.032 For the client (IP address: 62.32.81.83, host name: "62.32.81.83", port number: 40607), connection "CID-9" has been created.
+2018-07-16 19:19:59.748 Connection "CID-9" has been terminated.
+2018-07-16 19:19:59.748 The connection with the client (IP address 62.32.81.83, Port number 40607) has been disconnected.
+2018-07-16 19:25:48.934 On the TCP Listener (Port 5555), a Client (IP address 117.111.7.127, Host name "117.111.7.127", Port number 59036) has connected.
+2018-07-16 19:25:48.934 For the client (IP address: 117.111.7.127, host name: "117.111.7.127", port number: 59036), connection "CID-10" has been created.
+2018-07-16 19:25:48.934 Connection "CID-10" has been terminated.
+2018-07-16 19:25:48.934 The connection with the client (IP address 117.111.7.127, Port number 59036) has been disconnected.
+2018-07-16 19:53:21.863 On the TCP Listener (Port 443), a Client (IP address 62.32.81.83, Host name "62.32.81.83", Port number 50623) has connected.
+2018-07-16 19:53:21.863 For the client (IP address: 62.32.81.83, host name: "62.32.81.83", port number: 50623), connection "CID-11" has been created.
+2018-07-16 19:53:22.872 Connection "CID-11" has been terminated.
+2018-07-16 19:53:22.872 The connection with the client (IP address 62.32.81.83, Port number 50623) has been disconnected.
+2018-07-16 20:12:35.798 On the TCP Listener (Port 5555), a Client (IP address 141.196.195.16, Host name "141.196.195.16", Port number 43593) has connected.
+2018-07-16 20:12:35.798 For the client (IP address: 141.196.195.16, host name: "141.196.195.16", port number: 43593), connection "CID-12" has been created.
+2018-07-16 20:12:35.798 Connection "CID-12" has been terminated.
+2018-07-16 20:12:35.798 The connection with the client (IP address 141.196.195.16, Port number 43593) has been disconnected.
+2018-07-16 20:13:29.278 On the TCP Listener (Port 5555), a Client (IP address 176.237.176.148, Host name "176.237.176.148", Port number 23402) has connected.
+2018-07-16 20:13:29.278 For the client (IP address: 176.237.176.148, host name: "176.237.176.148", port number: 23402), connection "CID-13" has been created.
+2018-07-16 20:13:29.278 Connection "CID-13" has been terminated.
+2018-07-16 20:13:29.278 The connection with the client (IP address 176.237.176.148, Port number 23402) has been disconnected.
+2018-07-16 20:23:16.663 On the TCP Listener (Port 5555), a Client (IP address 221.124.90.134, Host name "221.124.90.134", Port number 59633) has connected.
+2018-07-16 20:23:16.663 For the client (IP address: 221.124.90.134, host name: "221.124.90.134", port number: 59633), connection "CID-14" has been created.
+2018-07-16 20:23:16.663 Connection "CID-14" has been terminated.
+2018-07-16 20:23:16.663 The connection with the client (IP address 221.124.90.134, Port number 59633) has been disconnected.
+2018-07-16 20:36:03.540 On the TCP Listener (Port 5555), a Client (IP address 172.58.40.98, Host name "172.58.40.98", Port number 64047) has connected.
+2018-07-16 20:36:03.540 For the client (IP address: 172.58.40.98, host name: "172.58.40.98", port number: 64047), connection "CID-15" has been created.
+2018-07-16 20:36:03.540 Connection "CID-15" has been terminated.
+2018-07-16 20:36:03.540 The connection with the client (IP address 172.58.40.98, Port number 64047) has been disconnected.
+2018-07-16 20:37:18.305 On the TCP Listener (Port 443), a Client (IP address 62.32.81.83, Host name "62.32.81.83", Port number 31369) has connected.
+2018-07-16 20:37:18.305 For the client (IP address: 62.32.81.83, host name: "62.32.81.83", port number: 31369), connection "CID-16" has been created.
+2018-07-16 20:37:19.425 Connection "CID-16" has been terminated.
+2018-07-16 20:37:19.425 The connection with the client (IP address 62.32.81.83, Port number 31369) has been disconnected.
+2018-07-16 20:39:06.738 On the TCP Listener (Port 5555), a Client (IP address 117.111.26.164, Host name "117.111.26.164", Port number 33063) has connected.
+2018-07-16 20:39:06.738 For the client (IP address: 117.111.26.164, host name: "117.111.26.164", port number: 33063), connection "CID-17" has been created.
+2018-07-16 20:39:06.738 Connection "CID-17" has been terminated.
+2018-07-16 20:39:06.738 The connection with the client (IP address 117.111.26.164, Port number 33063) has been disconnected.
+2018-07-16 20:48:09.902 On the TCP Listener (Port 5555), a Client (IP address 172.58.185.62, Host name "172.58.185.62", Port number 20594) has connected.
+2018-07-16 20:48:09.902 For the client (IP address: 172.58.185.62, host name: "172.58.185.62", port number: 20594), connection "CID-18" has been created.
+2018-07-16 20:48:09.902 Connection "CID-18" has been terminated.
+2018-07-16 20:48:09.902 The connection with the client (IP address 172.58.185.62, Port number 20594) has been disconnected.
+2018-07-16 21:06:41.193 On the TCP Listener (Port 443), a Client (IP address 62.32.81.83, Host name "62.32.81.83", Port number 53465) has connected.
+2018-07-16 21:06:41.193 For the client (IP address: 62.32.81.83, host name: "62.32.81.83", port number: 53465), connection "CID-19" has been created.
+2018-07-16 21:06:42.606 Connection "CID-19" has been terminated.
+2018-07-16 21:06:42.606 The connection with the client (IP address 62.32.81.83, Port number 53465) has been disconnected.
+2018-07-16 21:18:12.003 On the TCP Listener (Port 5555), a Client (IP address 117.111.21.34, Host name "117.111.21.34", Port number 49940) has connected.
+2018-07-16 21:18:12.003 For the client (IP address: 117.111.21.34, host name: "117.111.21.34", port number: 49940), connection "CID-20" has been created.
+2018-07-16 21:18:12.003 Connection "CID-20" has been terminated.
+2018-07-16 21:18:12.003 The connection with the client (IP address 117.111.21.34, Port number 49940) has been disconnected.
+2018-07-16 21:24:32.445 On the TCP Listener (Port 5555), a Client (IP address 117.111.11.16, Host name "117.111.11.16", Port number 27949) has connected.
+2018-07-16 21:24:32.445 For the client (IP address: 117.111.11.16, host name: "117.111.11.16", port number: 27949), connection "CID-21" has been created.
+2018-07-16 21:25:22.991 Connection "CID-21" has been terminated.
+2018-07-16 21:25:22.991 The connection with the client (IP address 117.111.11.16, Port number 27949) has been disconnected.
+2018-07-16 21:36:33.918 On the TCP Listener (Port 5555), a Client (IP address 117.111.18.135, Host name "117.111.18.135", Port number 40818) has connected.
+2018-07-16 21:36:33.918 For the client (IP address: 117.111.18.135, host name: "117.111.18.135", port number: 40818), connection "CID-22" has been created.
+2018-07-16 21:36:33.918 Connection "CID-22" has been terminated.
+2018-07-16 21:36:33.918 The connection with the client (IP address 117.111.18.135, Port number 40818) has been disconnected.
+2018-07-16 21:46:18.144 On the TCP Listener (Port 443), a Client (IP address 62.32.81.83, Host name "62.32.81.83", Port number 24057) has connected.
+2018-07-16 21:46:18.144 For the client (IP address: 62.32.81.83, host name: "62.32.81.83", port number: 24057), connection "CID-23" has been created.
+2018-07-16 21:46:19.546 Connection "CID-23" has been terminated.
+2018-07-16 21:46:19.546 The connection with the client (IP address 62.32.81.83, Port number 24057) has been disconnected.
+2018-07-16 21:49:53.013 On the TCP Listener (Port 5555), a Client (IP address 172.56.30.222, Host name "172.56.30.222", Port number 43595) has connected.
+2018-07-16 21:49:53.013 For the client (IP address: 172.56.30.222, host name: "172.56.30.222", port number: 43595), connection "CID-24" has been created.
+2018-07-16 21:49:53.013 Connection "CID-24" has been terminated.
+2018-07-16 21:49:53.013 The connection with the client (IP address 172.56.30.222, Port number 43595) has been disconnected.
+2018-07-16 22:01:44.859 On the TCP Listener (Port 443), a Client (IP address 111.239.186.2, Host name "KD111239186002.au-net.ne.jp", Port number 49542) has connected.
+2018-07-16 22:01:44.859 For the client (IP address: 111.239.186.2, host name: "KD111239186002.au-net.ne.jp", port number: 49542), connection "CID-25" has been created.
+2018-07-16 22:01:44.930 SSL communication for connection "CID-25" has been started. The encryption algorithm name is "AES128-SHA".
+2018-07-16 22:01:45.313 Connection "CID-25" connected using server admin mode.
+2018-07-16 22:01:45.313 Connection "CID-25" successfully logged in using administration mode.
+2018-07-16 22:01:45.313 Connection "CID-25" created a new remote procedure call session "RPC-89" for the purpose of administration mode.
+2018-07-16 22:02:16.719 [HUB "VPN"] Administration mode [RPC-89] (Virtual Hub "VPN"): User "futatsusugimoto" has been created.
+2018-07-16 22:09:39.889 Connection "CID-25" terminated by the cause "No error." (code 0).
+2018-07-16 22:09:39.889 Connection "CID-25" has been terminated.
+2018-07-16 22:09:39.889 The connection with the client (IP address 111.239.186.2, Port number 49542) has been disconnected.
+2018-07-16 22:11:30.413 IPsec Client 1 (218.188.222.205:38080 -> 133.130.103.182:500): A new IPsec client is created.
+2018-07-16 22:11:30.413 IPsec IKE Session (IKE SA) 1 (Client: 1) (218.188.222.205:38080 -> 133.130.103.182:500): A new IKE SA (Main Mode) is created. Initiator Cookie: 0xD8EB00A97AEED1B1, Responder Cookie: 0x3C8FB27BFDB73604, DH Group: MODP 2048 (Group 14), Hash Algorithm: SHA-2-256, Cipher Algorithm: AES-CBC, Cipher Key Size: 256 bits, Lifetime: 4294967295 Kbytes or 3600 seconds
+2018-07-16 22:11:32.707 IPsec Client 1 (218.188.222.205:49220 -> 133.130.103.182:4500): The port number information of this client is updated.
+2018-07-16 22:11:32.707 IPsec Client 1 (218.188.222.205:49220 -> 133.130.103.182:4500): 
+2018-07-16 22:11:32.707 IPsec IKE Session (IKE SA) 1 (Client: 1) (218.188.222.205:49220 -> 133.130.103.182:4500): This IKE SA is established between the server and the client.
+2018-07-16 22:11:33.565 IPsec IKE Session (IKE SA) 1 (Client: 1) (218.188.222.205:49220 -> 133.130.103.182:4500): The client initiates a QuickMode negotiation.
+2018-07-16 22:11:33.565 IPsec ESP Session (IPsec SA) 1 (Client: 1) (218.188.222.205:49220 -> 133.130.103.182:4500): A new IPsec SA (Direction: Client -> Server) is created. SPI: 0xB76C69B, DH Group: (null), Hash Algorithm: SHA-1, Cipher Algorithm: AES-CBC, Cipher Key Size: 256 bits, Lifetime: 4294967295 Kbytes or 3600 seconds
+2018-07-16 22:11:33.565 IPsec ESP Session (IPsec SA) 1 (Client: 1) (218.188.222.205:49220 -> 133.130.103.182:4500): A new IPsec SA (Direction: Server -> Client) is created. SPI: 0x965FD44, DH Group: (null), Hash Algorithm: SHA-1, Cipher Algorithm: AES-CBC, Cipher Key Size: 256 bits, Lifetime: 4294967295 Kbytes or 3600 seconds
+2018-07-16 22:11:33.706 IPsec ESP Session (IPsec SA) 1 (Client: 1) (218.188.222.205:49220 -> 133.130.103.182:4500): This IPsec SA is established between the server and the client.
+2018-07-16 22:11:33.716 IPsec Client 1 (218.188.222.205:49220 -> 133.130.103.182:4500): The L2TP Server Module is started.
+2018-07-16 22:11:33.948 L2TP PPP Session [218.188.222.205:1701]: A new PPP session (Upper protocol: L2TP) is started. IP Address of PPP Client: 218.188.222.205 (Hostname: "Johns-MacBook-Air.local"), Port Number of PPP Client: 1701, IP Address of PPP Server: 133.130.103.182, Port Number of PPP Server: 1701, Client Software Name: "L2TP VPN Client", IPv4 TCP MSS (Max Segment Size): 1314 bytes
+2018-07-16 22:11:34.110 On the TCP Listener (Port 0), a Client (IP address 218.188.222.205, Host name "static-bbs-205-222-188-218-on-nets.com", Port number 1701) has connected.
+2018-07-16 22:11:34.110 For the client (IP address: 218.188.222.205, host name: "static-bbs-205-222-188-218-on-nets.com", port number: 1701), connection "CID-26" has been created.
+2018-07-16 22:11:34.110 SSL communication for connection "CID-26" has been started. The encryption algorithm name is "(null)".
+2018-07-16 22:11:34.110 [HUB "VPN"] The connection "CID-26" (IP address: 218.188.222.205, Host name: static-bbs-205-222-188-218-on-nets.com, Port number: 1701, Client name: "L2TP VPN Client", Version: 4.27, Build: 9668) is attempting to connect to the Virtual Hub. The auth type provided is "External server authentication" and the user name is "futatsusugimoto".
+2018-07-16 22:11:34.110 [HUB "VPN"] Connection "CID-26": Successfully authenticated as user "futatsusugimoto".
+2018-07-16 22:11:34.110 [HUB "VPN"] Connection "CID-26": The new session "SID-FUTATSUSUGIMOTO-[L2TP]-2" has been created. (IP address: 218.188.222.205, Port number: 1701, Physical underlying protocol: "Legacy VPN - L2TP")
+2018-07-16 22:11:34.110 [HUB "VPN"] Session "SID-FUTATSUSUGIMOTO-[L2TP]-2": The parameter has been set. Max number of TCP connections: 1, Use of encryption: Yes, Use of compression: No, Use of Half duplex communication: No, Timeout: 20 seconds.
+2018-07-16 22:11:34.110 [HUB "VPN"] Session "SID-FUTATSUSUGIMOTO-[L2TP]-2": VPN Client details: (Client product name: "L2TP VPN Client", Client version: 427, Client build number: 9668, Server product name: "SoftEther VPN Server (64 bit)", Server version: 427, Server build number: 9668, Client OS name: "L2TP VPN Client", Client OS version: "-", Client product ID: "-", Client host name: "Johns-MacBook-Air.local", Client IP address: "218.188.222.205", Client port number: 1701, Server host name: "133.130.103.182", Server IP address: "133.130.103.182", Server port number: 1701, Proxy host name: "", Proxy IP address: "0.0.0.0", Proxy port number: 0, Virtual Hub name: "VPN", Client unique ID: "C011B21AED963BC822A578E318D466BE")
+2018-07-16 22:11:34.180 L2TP PPP Session [218.188.222.205:1701]: Trying to request an IP address from the DHCP server.
+2018-07-16 22:11:34.624 [HUB "VPN"] SecureNAT: The DHCP entry 1 has been created. MAC address: CA-F3-2D-02-2B-C6, IP address: 192.168.30.10, host name: Johns-MacBook-Air.local, expiration span: 7200 seconds
+2018-07-16 22:11:34.624 [HUB "VPN"] Session "SID-SECURENAT-1": The DHCP server of host "5E-4B-D6-03-2C-96" (192.168.30.1) on this session allocated, for host "SID-FUTATSUSUGIMOTO-[L2TP]-2" on another session "CA-F3-2D-02-2B-C6", the new IP address 192.168.30.10.
+2018-07-16 22:11:34.624 L2TP PPP Session [218.188.222.205:1701]: An IP address is assigned. IP Address of Client: 192.168.30.10, Subnet Mask: 255.255.255.0, Default Gateway: 192.168.30.1, Domain Name: "", DNS Server 1: 192.168.30.1, DNS Server 2: 0.0.0.0, WINS Server 1: 0.0.0.0, WINS Server 2: 0.0.0.0, IP Address of DHCP Server: 192.168.30.1, Lease Lifetime: 7200 seconds
+2018-07-16 22:11:34.624 L2TP PPP Session [218.188.222.205:1701]: The IP address and other network information parameters are set successfully. IP Address of Client: 192.168.30.10, Subnet Mask: 255.255.255.0, Default Gateway: 192.168.30.1, DNS Server 1: 192.168.30.1, DNS Server 2: 0.0.0.0, WINS Server 1: 0.0.0.0, WINS Server 2: 0.0.0.0
+2018-07-16 22:11:34.845 [HUB "VPN"] SecureNAT: The UDP session 1 has been created. Connection source 192.168.30.10:50502, Connection destination 192.168.30.1:53
+2018-07-16 22:11:34.845 [HUB "VPN"] SecureNAT: The UDP session 2 has been created. Connection source 192.168.30.10:63933, Connection destination 192.168.30.1:53
+2018-07-16 22:11:34.845 [HUB "VPN"] SecureNAT: The UDP session 3 has been created. Connection source 192.168.30.10:64532, Connection destination 192.168.30.1:53
+2018-07-16 22:11:34.845 [HUB "VPN"] SecureNAT: The UDP session 4 has been created. Connection source 192.168.30.10:49817, Connection destination 192.168.30.1:53
+2018-07-16 22:11:34.906 [HUB "VPN"] SecureNAT: The UDP session 5 has been created. Connection source 192.168.30.10:60126, Connection destination 192.168.30.1:53
+2018-07-16 22:11:34.906 [HUB "VPN"] SecureNAT: The UDP session 6 has been created. Connection source 192.168.30.10:54364, Connection destination 192.168.30.1:53
+2018-07-16 22:11:34.926 [HUB "VPN"] SecureNAT: The UDP session 7 has been created. Connection source 192.168.30.10:65090, Connection destination 192.168.30.1:53
+2018-07-16 22:11:34.966 [HUB "VPN"] SecureNAT: The UDP session 8 has been created. Connection source 192.168.30.10:50455, Connection destination 192.168.30.1:53
+2018-07-16 22:11:35.531 [HUB "VPN"] SecureNAT: The UDP session 9 has been created. Connection source 192.168.30.10:50544, Connection destination 192.168.30.1:53
+2018-07-16 22:11:35.541 [HUB "VPN"] SecureNAT: The UDP session 10 has been created. Connection source 192.168.30.10:63640, Connection destination 192.168.30.1:53
+2018-07-16 22:11:35.541 [HUB "VPN"] SecureNAT: The UDP session 11 has been created. Connection source 192.168.30.10:61921, Connection destination 192.168.30.1:53
+2018-07-16 22:11:35.541 [HUB "VPN"] SecureNAT: The UDP session 12 has been created. Connection source 192.168.30.10:54097, Connection destination 192.168.30.1:53
+2018-07-16 22:11:35.541 [HUB "VPN"] SecureNAT: The UDP session 13 has been created. Connection source 192.168.30.10:62086, Connection destination 192.168.30.1:53
+2018-07-16 22:11:35.541 [HUB "VPN"] SecureNAT: The UDP session 14 has been created. Connection source 192.168.30.10:62182, Connection destination 192.168.30.1:53
+2018-07-16 22:11:35.753 [HUB "VPN"] SecureNAT: The UDP session 15 has been created. Connection source 192.168.30.10:52581, Connection destination 192.168.30.1:53
+2018-07-16 22:11:38.808 [HUB "VPN"] SecureNAT: The UDP session 16 has been created. Connection source 192.168.30.10:54733, Connection destination 192.168.30.1:53
+2018-07-16 22:11:41.299 [HUB "VPN"] SecureNAT: The UDP session 17 has been created. Connection source 192.168.30.10:61049, Connection destination 192.168.30.1:53
+2018-07-16 22:11:41.299 [HUB "VPN"] SecureNAT: The UDP session 18 has been created. Connection source 192.168.30.10:58177, Connection destination 192.168.30.1:53
+2018-07-16 22:11:41.299 [HUB "VPN"] SecureNAT: The UDP session 19 has been created. Connection source 192.168.30.10:57418, Connection destination 192.168.30.1:53
+2018-07-16 22:11:41.299 [HUB "VPN"] SecureNAT: The UDP session 20 has been created. Connection source 192.168.30.10:64596, Connection destination 192.168.30.1:53
+2018-07-16 22:11:41.299 [HUB "VPN"] SecureNAT: The UDP session 21 has been created. Connection source 192.168.30.10:51152, Connection destination 192.168.30.1:53
+2018-07-16 22:11:41.299 [HUB "VPN"] SecureNAT: The UDP session 22 has been created. Connection source 192.168.30.10:55870, Connection destination 192.168.30.1:53
+2018-07-16 22:11:41.359 [HUB "VPN"] SecureNAT: The UDP session 23 has been created. Connection source 192.168.30.10:55913, Connection destination 192.168.30.1:53
+2018-07-16 22:11:41.359 [HUB "VPN"] SecureNAT: The UDP session 24 has been created. Connection source 192.168.30.10:53535, Connection destination 192.168.30.1:53
+2018-07-16 22:11:41.359 [HUB "VPN"] SecureNAT: The UDP session 25 has been created. Connection source 192.168.30.10:63039, Connection destination 192.168.30.1:53
+2018-07-16 22:11:41.359 [HUB "VPN"] SecureNAT: The UDP session 26 has been created. Connection source 192.168.30.10:56293, Connection destination 192.168.30.1:53
+2018-07-16 22:11:42.044 [HUB "VPN"] SecureNAT: The UDP session 27 has been created. Connection source 192.168.30.10:57628, Connection destination 192.168.30.1:53
+2018-07-16 22:11:43.617 [HUB "VPN"] SecureNAT: The UDP session 28 has been created. Connection source 192.168.30.10:65213, Connection destination 192.168.30.1:53
+2018-07-16 22:11:43.617 [HUB "VPN"] SecureNAT: The UDP session 29 has been created. Connection source 192.168.30.10:63683, Connection destination 192.168.30.1:53
+2018-07-16 22:11:43.627 [HUB "VPN"] SecureNAT: The UDP session 30 has been created. Connection source 192.168.30.10:54559, Connection destination 192.168.30.1:53
+2018-07-16 22:11:43.677 [HUB "VPN"] SecureNAT: The UDP session 31 has been created. Connection source 192.168.30.10:51181, Connection destination 192.168.30.1:53
+2018-07-16 22:11:45.441 [HUB "VPN"] SecureNAT: The UDP session 32 has been created. Connection source 192.168.30.10:63328, Connection destination 192.168.30.1:53
+2018-07-16 22:11:45.744 [HUB "VPN"] SecureNAT: The UDP session 33 has been created. Connection source 192.168.30.10:60936, Connection destination 192.168.30.1:53
+2018-07-16 22:11:48.325 [HUB "VPN"] SecureNAT: The UDP session 34 has been created. Connection source 192.168.30.10:51426, Connection destination 192.168.30.1:53
+2018-07-16 22:11:49.354 [HUB "VPN"] SecureNAT: The UDP session 35 has been created. Connection source 192.168.30.10:51148, Connection destination 192.168.30.1:53
+2018-07-16 22:11:50.665 [HUB "VPN"] SecureNAT: The UDP session 36 has been created. Connection source 192.168.30.10:62155, Connection destination 192.168.30.1:53
+2018-07-16 22:11:56.229 [HUB "VPN"] SecureNAT: The UDP session 37 has been created. Connection source 192.168.30.10:57349, Connection destination 192.168.30.1:53
+2018-07-16 22:11:56.229 [HUB "VPN"] SecureNAT: The UDP session 38 has been created. Connection source 192.168.30.10:55579, Connection destination 192.168.30.1:53
+2018-07-16 22:11:56.894 [HUB "VPN"] SecureNAT: The UDP session 39 has been created. Connection source 192.168.30.10:55834, Connection destination 192.168.30.1:53
+2018-07-16 22:11:58.084 [HUB "VPN"] SecureNAT: The UDP session 40 has been created. Connection source 192.168.30.10:63676, Connection destination 192.168.30.1:53
+2018-07-16 22:11:58.084 [HUB "VPN"] SecureNAT: The UDP session 41 has been created. Connection source 192.168.30.10:50807, Connection destination 192.168.30.1:53
+2018-07-16 22:11:58.599 [HUB "VPN"] SecureNAT: The UDP session 42 has been created. Connection source 192.168.30.10:61910, Connection destination 192.168.30.1:53
+2018-07-16 22:11:58.599 [HUB "VPN"] SecureNAT: The UDP session 43 has been created. Connection source 192.168.30.10:61218, Connection destination 192.168.30.1:53
+2018-07-16 22:11:58.599 [HUB "VPN"] SecureNAT: The UDP session 44 has been created. Connection source 192.168.30.10:51807, Connection destination 192.168.30.1:53
+2018-07-16 22:11:58.599 [HUB "VPN"] SecureNAT: The UDP session 45 has been created. Connection source 192.168.30.10:65255, Connection destination 192.168.30.1:53
+2018-07-16 22:11:58.771 [HUB "VPN"] SecureNAT: The UDP session 46 has been created. Connection source 192.168.30.10:63745, Connection destination 192.168.30.1:53
+2018-07-16 22:11:58.771 [HUB "VPN"] SecureNAT: The UDP session 47 has been created. Connection source 192.168.30.10:53438, Connection destination 192.168.30.1:53
+2018-07-16 22:11:58.912 [HUB "VPN"] SecureNAT: The UDP session 48 has been created. Connection source 192.168.30.10:52067, Connection destination 192.168.30.1:53
+2018-07-16 22:11:58.912 [HUB "VPN"] SecureNAT: The UDP session 49 has been created. Connection source 192.168.30.10:57978, Connection destination 192.168.30.1:53
+2018-07-16 22:11:58.912 [HUB "VPN"] SecureNAT: The UDP session 50 has been created. Connection source 192.168.30.10:58757, Connection destination 192.168.30.1:53
+2018-07-16 22:12:00.958 [HUB "VPN"] SecureNAT: The UDP session 51 has been created. Connection source 192.168.30.10:60188, Connection destination 192.168.30.1:53
+2018-07-16 22:12:07.474 [HUB "VPN"] SecureNAT: The UDP session 52 has been created. Connection source 192.168.30.10:58825, Connection destination 192.168.30.1:53
+2018-07-16 22:12:35.081 [HUB "VPN"] SecureNAT: The UDP session 4 has been deleted.
+2018-07-16 22:12:35.081 [HUB "VPN"] SecureNAT: The UDP session 8 has been deleted.
+2018-07-16 22:12:35.081 [HUB "VPN"] SecureNAT: The UDP session 1 has been deleted.
+2018-07-16 22:12:35.081 [HUB "VPN"] SecureNAT: The UDP session 6 has been deleted.
+2018-07-16 22:12:35.081 [HUB "VPN"] SecureNAT: The UDP session 5 has been deleted.
+2018-07-16 22:12:35.081 [HUB "VPN"] SecureNAT: The UDP session 2 has been deleted.
+2018-07-16 22:12:35.081 [HUB "VPN"] SecureNAT: The UDP session 3 has been deleted.
+2018-07-16 22:12:35.081 [HUB "VPN"] SecureNAT: The UDP session 7 has been deleted.
+2018-07-16 22:12:35.596 [HUB "VPN"] SecureNAT: The UDP session 9 has been deleted.
+2018-07-16 22:12:35.596 [HUB "VPN"] SecureNAT: The UDP session 12 has been deleted.
+2018-07-16 22:12:35.596 [HUB "VPN"] SecureNAT: The UDP session 11 has been deleted.
+2018-07-16 22:12:35.596 [HUB "VPN"] SecureNAT: The UDP session 14 has been deleted.
+2018-07-16 22:12:35.596 [HUB "VPN"] SecureNAT: The UDP session 10 has been deleted.
+2018-07-16 22:12:35.848 [HUB "VPN"] SecureNAT: The UDP session 15 has been deleted.
+2018-07-16 22:12:35.848 [HUB "VPN"] SecureNAT: The UDP session 13 has been deleted.
+2018-07-16 22:12:38.923 [HUB "VPN"] SecureNAT: The UDP session 16 has been deleted.
+2018-07-16 22:12:41.486 [HUB "VPN"] SecureNAT: The UDP session 21 has been deleted.
+2018-07-16 22:12:41.486 [HUB "VPN"] SecureNAT: The UDP session 24 has been deleted.
+2018-07-16 22:12:41.486 [HUB "VPN"] SecureNAT: The UDP session 22 has been deleted.
+2018-07-16 22:12:41.486 [HUB "VPN"] SecureNAT: The UDP session 23 has been deleted.
+2018-07-16 22:12:41.486 [HUB "VPN"] SecureNAT: The UDP session 26 has been deleted.
+2018-07-16 22:12:41.486 [HUB "VPN"] SecureNAT: The UDP session 19 has been deleted.
+2018-07-16 22:12:41.486 [HUB "VPN"] SecureNAT: The UDP session 18 has been deleted.
+2018-07-16 22:12:41.486 [HUB "VPN"] SecureNAT: The UDP session 17 has been deleted.
+2018-07-16 22:12:41.486 [HUB "VPN"] SecureNAT: The UDP session 25 has been deleted.
+2018-07-16 22:12:41.486 [HUB "VPN"] SecureNAT: The UDP session 20 has been deleted.
+2018-07-16 22:12:42.264 [HUB "VPN"] SecureNAT: The UDP session 27 has been deleted.
+2018-07-16 22:12:43.796 [HUB "VPN"] SecureNAT: The UDP session 31 has been deleted.
+2018-07-16 22:12:43.796 [HUB "VPN"] SecureNAT: The UDP session 30 has been deleted.
+2018-07-16 22:12:43.796 [HUB "VPN"] SecureNAT: The UDP session 29 has been deleted.
+2018-07-16 22:12:43.796 [HUB "VPN"] SecureNAT: The UDP session 28 has been deleted.
+2018-07-16 22:12:45.590 [HUB "VPN"] SecureNAT: The UDP session 32 has been deleted.
+2018-07-16 22:12:45.852 [HUB "VPN"] SecureNAT: The UDP session 33 has been deleted.
+2018-07-16 22:12:47.820 [HUB "VPN"] SecureNAT: The UDP session 53 has been created. Connection source 192.168.30.10:62300, Connection destination 192.168.30.1:53
+2018-07-16 22:12:48.334 [HUB "VPN"] SecureNAT: The UDP session 34 has been deleted.
+2018-07-16 22:12:48.707 [HUB "VPN"] SecureNAT: The UDP session 54 has been created. Connection source 192.168.30.10:55012, Connection destination 192.168.30.1:53
+2018-07-16 22:12:49.605 [HUB "VPN"] SecureNAT: The UDP session 35 has been deleted.
+2018-07-16 22:12:50.886 [HUB "VPN"] SecureNAT: The UDP session 36 has been deleted.
+2018-07-16 22:12:54.879 [HUB "VPN"] SecureNAT: The UDP session 55 has been created. Connection source 192.168.30.10:64732, Connection destination 192.168.30.1:53
+2018-07-16 22:12:55.374 [HUB "VPN"] SecureNAT: The UDP session 56 has been created. Connection source 192.168.30.10:58018, Connection destination 192.168.30.1:53
+2018-07-16 22:12:55.576 [HUB "VPN"] SecureNAT: The UDP session 57 has been created. Connection source 192.168.30.10:57488, Connection destination 192.168.30.1:53
+2018-07-16 22:12:56.413 [HUB "VPN"] SecureNAT: The UDP session 58 has been created. Connection source 192.168.30.10:51815, Connection destination 192.168.30.1:53
+2018-07-16 22:12:56.413 [HUB "VPN"] SecureNAT: The UDP session 38 has been deleted.
+2018-07-16 22:12:56.413 [HUB "VPN"] SecureNAT: The UDP session 37 has been deleted.
+2018-07-16 22:12:57.099 [HUB "VPN"] SecureNAT: The UDP session 39 has been deleted.
+2018-07-16 22:12:58.118 [HUB "VPN"] SecureNAT: The UDP session 41 has been deleted.
+2018-07-16 22:12:58.118 [HUB "VPN"] SecureNAT: The UDP session 40 has been deleted.
+2018-07-16 22:12:58.632 [HUB "VPN"] SecureNAT: The UDP session 44 has been deleted.
+2018-07-16 22:12:58.632 [HUB "VPN"] SecureNAT: The UDP session 43 has been deleted.
+2018-07-16 22:12:58.632 [HUB "VPN"] SecureNAT: The UDP session 42 has been deleted.
+2018-07-16 22:12:58.632 [HUB "VPN"] SecureNAT: The UDP session 45 has been deleted.
+2018-07-16 22:12:58.894 [HUB "VPN"] SecureNAT: The UDP session 47 has been deleted.
+2018-07-16 22:12:58.894 [HUB "VPN"] SecureNAT: The UDP session 46 has been deleted.
+2018-07-16 22:12:59.146 [HUB "VPN"] SecureNAT: The UDP session 48 has been deleted.
+2018-07-16 22:12:59.146 [HUB "VPN"] SecureNAT: The UDP session 49 has been deleted.
+2018-07-16 22:12:59.146 [HUB "VPN"] SecureNAT: The UDP session 50 has been deleted.
+2018-07-16 22:13:01.193 [HUB "VPN"] SecureNAT: The UDP session 51 has been deleted.
+2018-07-16 22:13:07.861 [HUB "VPN"] SecureNAT: The UDP session 52 has been deleted.
+2018-07-16 22:13:28.634 On the TCP Listener (Port 5555), a Client (IP address 49.88.106.137, Host name "49.88.106.137", Port number 60226) has connected.
+2018-07-16 22:13:28.634 For the client (IP address: 49.88.106.137, host name: "49.88.106.137", port number: 60226), connection "CID-27" has been created.
+2018-07-16 22:13:28.634 Connection "CID-27" has been terminated.
+2018-07-16 22:13:28.634 The connection with the client (IP address 49.88.106.137, Port number 60226) has been disconnected.
+2018-07-16 22:13:40.077 [HUB "VPN"] SecureNAT: The UDP session 59 has been created. Connection source 192.168.30.10:60986, Connection destination 192.168.30.1:53
+2018-07-16 22:13:40.077 [HUB "VPN"] SecureNAT: The UDP session 60 has been created. Connection source 192.168.30.10:49887, Connection destination 192.168.30.1:53
+2018-07-16 22:13:40.087 [HUB "VPN"] SecureNAT: The UDP session 61 has been created. Connection source 192.168.30.10:55678, Connection destination 192.168.30.1:53
+2018-07-16 22:13:42.719 [HUB "VPN"] SecureNAT: The UDP session 62 has been created. Connection source 192.168.30.10:53742, Connection destination 192.168.30.1:53
+2018-07-16 22:13:43.525 [HUB "VPN"] SecureNAT: The UDP session 63 has been created. Connection source 192.168.30.10:52862, Connection destination 192.168.30.1:53
+2018-07-16 22:13:46.963 [HUB "VPN"] SecureNAT: The UDP session 64 has been created. Connection source 192.168.30.10:62938, Connection destination 192.168.30.1:53
+2018-07-16 22:13:46.963 [HUB "VPN"] SecureNAT: The UDP session 65 has been created. Connection source 192.168.30.10:62832, Connection destination 192.168.30.1:53
+2018-07-16 22:13:46.963 [HUB "VPN"] SecureNAT: The UDP session 66 has been created. Connection source 192.168.30.10:64557, Connection destination 192.168.30.1:53
+2018-07-16 22:13:47.991 [HUB "VPN"] SecureNAT: The UDP session 53 has been deleted.
+2018-07-16 22:13:49.009 [HUB "VPN"] SecureNAT: The UDP session 54 has been deleted.
+2018-07-16 22:13:54.908 [HUB "VPN"] SecureNAT: The UDP session 55 has been deleted.
+2018-07-16 22:13:54.949 [HUB "VPN"] SecureNAT: The UDP session 67 has been created. Connection source 192.168.30.10:59432, Connection destination 192.168.30.1:53
+2018-07-16 22:13:55.140 [HUB "VPN"] SecureNAT: The UDP session 68 has been created. Connection source 192.168.30.10:62492, Connection destination 192.168.30.1:53
+2018-07-16 22:13:55.403 [HUB "VPN"] SecureNAT: The UDP session 56 has been deleted.
+2018-07-16 22:13:55.917 [HUB "VPN"] SecureNAT: The UDP session 57 has been deleted.
+2018-07-16 22:13:56.683 [HUB "VPN"] SecureNAT: The UDP session 58 has been deleted.
+2018-07-16 22:14:40.252 [HUB "VPN"] SecureNAT: The UDP session 60 has been deleted.
+2018-07-16 22:14:40.252 [HUB "VPN"] SecureNAT: The UDP session 61 has been deleted.
+2018-07-16 22:14:40.252 [HUB "VPN"] SecureNAT: The UDP session 59 has been deleted.
+2018-07-16 22:14:42.812 [HUB "VPN"] SecureNAT: The UDP session 62 has been deleted.
+2018-07-16 22:14:43.588 [HUB "VPN"] SecureNAT: The UDP session 63 has been deleted.
+2018-07-16 22:14:47.176 [HUB "VPN"] SecureNAT: The UDP session 65 has been deleted.
+2018-07-16 22:14:47.176 [HUB "VPN"] SecureNAT: The UDP session 64 has been deleted.
+2018-07-16 22:14:47.176 [HUB "VPN"] SecureNAT: The UDP session 66 has been deleted.
+2018-07-16 22:14:55.120 [HUB "VPN"] SecureNAT: The UDP session 67 has been deleted.
+2018-07-16 22:14:55.372 [HUB "VPN"] SecureNAT: The UDP session 68 has been deleted.
+2018-07-16 22:19:26.736 On the TCP Listener (Port 443), a Client (IP address 62.32.81.83, Host name "62.32.81.83", Port number 27645) has connected.
+2018-07-16 22:19:26.736 For the client (IP address: 62.32.81.83, host name: "62.32.81.83", port number: 27645), connection "CID-28" has been created.
+2018-07-16 22:19:27.552 Connection "CID-28" has been terminated.
+2018-07-16 22:19:27.552 The connection with the client (IP address 62.32.81.83, Port number 27645) has been disconnected.
+2018-07-16 22:19:33.348 [HUB "VPN"] SecureNAT: The UDP session 69 has been created. Connection source 192.168.30.10:53410, Connection destination 192.168.30.1:53
+2018-07-16 22:19:33.348 [HUB "VPN"] SecureNAT: The UDP session 70 has been created. Connection source 192.168.30.10:50848, Connection destination 192.168.30.1:53
+2018-07-16 22:19:33.570 [HUB "VPN"] SecureNAT: The UDP session 71 has been created. Connection source 192.168.30.10:57938, Connection destination 192.168.30.1:53
+2018-07-16 22:19:33.570 [HUB "VPN"] SecureNAT: The UDP session 72 has been created. Connection source 192.168.30.10:53820, Connection destination 192.168.30.1:53
+2018-07-16 22:19:34.618 [HUB "VPN"] SecureNAT: The UDP session 73 has been created. Connection source 192.168.30.10:52698, Connection destination 192.168.30.1:53
+2018-07-16 22:19:34.618 [HUB "VPN"] SecureNAT: The UDP session 74 has been created. Connection source 192.168.30.10:62782, Connection destination 192.168.30.1:53
+2018-07-16 22:19:34.618 [HUB "VPN"] SecureNAT: The UDP session 75 has been created. Connection source 192.168.30.10:51050, Connection destination 192.168.30.1:53
+2018-07-16 22:19:34.618 [HUB "VPN"] SecureNAT: The UDP session 76 has been created. Connection source 192.168.30.10:61011, Connection destination 192.168.30.1:53
+2018-07-16 22:19:34.618 [HUB "VPN"] SecureNAT: The UDP session 77 has been created. Connection source 192.168.30.10:59410, Connection destination 192.168.30.1:53
+2018-07-16 22:19:34.618 [HUB "VPN"] SecureNAT: The UDP session 78 has been created. Connection source 192.168.30.10:52104, Connection destination 192.168.30.1:53
+2018-07-16 22:19:36.291 [HUB "VPN"] SecureNAT: The UDP session 79 has been created. Connection source 192.168.30.10:58889, Connection destination 192.168.30.1:53
+2018-07-16 22:19:36.754 [HUB "VPN"] SecureNAT: The UDP session 80 has been created. Connection source 192.168.30.10:53745, Connection destination 192.168.30.1:53
+2018-07-16 22:19:36.754 [HUB "VPN"] SecureNAT: The UDP session 81 has been created. Connection source 192.168.30.10:55301, Connection destination 192.168.30.1:53
+2018-07-16 22:19:37.923 [HUB "VPN"] SecureNAT: The UDP session 82 has been created. Connection source 192.168.30.10:50913, Connection destination 192.168.30.1:53
+2018-07-16 22:19:41.158 [HUB "VPN"] SecureNAT: The UDP session 83 has been created. Connection source 192.168.30.10:50679, Connection destination 192.168.30.1:53
+2018-07-16 22:19:41.169 [HUB "VPN"] SecureNAT: The UDP session 84 has been created. Connection source 192.168.30.10:57511, Connection destination 192.168.30.1:53
+2018-07-16 22:20:33.459 [HUB "VPN"] SecureNAT: The UDP session 70 has been deleted.
+2018-07-16 22:20:33.459 [HUB "VPN"] SecureNAT: The UDP session 69 has been deleted.
+2018-07-16 22:20:33.711 [HUB "VPN"] SecureNAT: The UDP session 72 has been deleted.
+2018-07-16 22:20:33.711 [HUB "VPN"] SecureNAT: The UDP session 71 has been deleted.
+2018-07-16 22:20:34.738 [HUB "VPN"] SecureNAT: The UDP session 75 has been deleted.
+2018-07-16 22:20:34.738 [HUB "VPN"] SecureNAT: The UDP session 78 has been deleted.
+2018-07-16 22:20:34.738 [HUB "VPN"] SecureNAT: The UDP session 73 has been deleted.
+2018-07-16 22:20:34.738 [HUB "VPN"] SecureNAT: The UDP session 77 has been deleted.
+2018-07-16 22:20:34.738 [HUB "VPN"] SecureNAT: The UDP session 76 has been deleted.
+2018-07-16 22:20:34.738 [HUB "VPN"] SecureNAT: The UDP session 74 has been deleted.
+2018-07-16 22:20:36.533 [HUB "VPN"] SecureNAT: The UDP session 79 has been deleted.
+2018-07-16 22:20:36.795 [HUB "VPN"] SecureNAT: The UDP session 80 has been deleted.
+2018-07-16 22:20:36.795 [HUB "VPN"] SecureNAT: The UDP session 81 has been deleted.
+2018-07-16 22:20:38.075 [HUB "VPN"] SecureNAT: The UDP session 82 has been deleted.
+2018-07-16 22:20:41.401 [HUB "VPN"] SecureNAT: The UDP session 83 has been deleted.
+2018-07-16 22:20:41.401 [HUB "VPN"] SecureNAT: The UDP session 84 has been deleted.
+2018-07-16 22:20:41.805 [HUB "VPN"] SecureNAT: The UDP session 85 has been created. Connection source 192.168.30.10:50558, Connection destination 192.168.30.1:53
+2018-07-16 22:20:41.805 [HUB "VPN"] SecureNAT: The UDP session 86 has been created. Connection source 192.168.30.10:56799, Connection destination 192.168.30.1:53
+2018-07-16 22:20:41.875 [HUB "VPN"] SecureNAT: The UDP session 87 has been created. Connection source 192.168.30.10:56361, Connection destination 192.168.30.1:53
+2018-07-16 22:20:41.875 [HUB "VPN"] SecureNAT: The UDP session 88 has been created. Connection source 192.168.30.10:57024, Connection destination 192.168.30.1:53
+2018-07-16 22:20:41.875 [HUB "VPN"] SecureNAT: The UDP session 89 has been created. Connection source 192.168.30.10:55184, Connection destination 192.168.30.1:53
+2018-07-16 22:21:41.841 [HUB "VPN"] SecureNAT: The UDP session 85 has been deleted.
+2018-07-16 22:21:41.841 [HUB "VPN"] SecureNAT: The UDP session 86 has been deleted.
+2018-07-16 22:21:42.103 [HUB "VPN"] SecureNAT: The UDP session 87 has been deleted.
+2018-07-16 22:21:42.103 [HUB "VPN"] SecureNAT: The UDP session 88 has been deleted.
+2018-07-16 22:21:42.103 [HUB "VPN"] SecureNAT: The UDP session 89 has been deleted.
+2018-07-16 22:22:09.493 L2TP PPP Session [218.188.222.205:1701]: A timeout on the PPP data transmitting occurred. The PPP client might be disconnected from the network.
+2018-07-16 22:22:09.493 L2TP PPP Session [218.188.222.205:1701]: The PPP session is disconnected.
+2018-07-16 22:22:12.055 [HUB "VPN"] Session "SID-FUTATSUSUGIMOTO-[L2TP]-2": The session has been terminated. The statistical information is as follows: Total outgoing data size: 34951 bytes, Total incoming data size: 14843 bytes.
+2018-07-16 22:22:12.085 Connection "CID-26" terminated by the cause "The VPN session has been deleted. It is possible that either the administrator disconnected the session or the connection from the client to the VPN Server has been disconnected." (code 11).
+2018-07-16 22:22:12.085 Connection "CID-26" has been terminated.
+2018-07-16 22:22:12.085 The connection with the client (IP address 218.188.222.205, Port number 1701) has been disconnected.
+2018-07-16 22:24:21.011 IPsec Client 1 (218.188.222.205:49220 -> 133.130.103.182:4500): This IPsec Client is deleted.
+2018-07-16 22:24:21.011 IPsec IKE Session (IKE SA) 1 (Client: 1) (218.188.222.205:49220 -> 133.130.103.182:4500): This IKE SA is deleted.
+2018-07-16 22:24:21.011 IPsec ESP Session (IPsec SA) 1 (Client: 1) (218.188.222.205:49220 -> 133.130.103.182:4500): This IPsec SA is deleted.
+2018-07-16 22:24:21.011 IPsec ESP Session (IPsec SA) 1 (Client: 1) (218.188.222.205:49220 -> 133.130.103.182:4500): This IPsec SA is deleted.
+2018-07-16 22:25:25.189 On the TCP Listener (Port 5555), a Client (IP address 172.58.153.22, Host name "172.58.153.22", Port number 57236) has connected.
+2018-07-16 22:25:25.189 For the client (IP address: 172.58.153.22, host name: "172.58.153.22", port number: 57236), connection "CID-29" has been created.
+2018-07-16 22:25:25.189 Connection "CID-29" has been terminated.
+2018-07-16 22:25:25.189 The connection with the client (IP address 172.58.153.22, Port number 57236) has been disconnected.
+2018-07-16 22:29:12.402 On the TCP Listener (Port 5555), a Client (IP address 179.132.168.87, Host name "179-132-168-87.user.vivozap.com.br", Port number 64848) has connected.
+2018-07-16 22:29:12.402 For the client (IP address: 179.132.168.87, host name: "179-132-168-87.user.vivozap.com.br", port number: 64848), connection "CID-30" has been created.
+2018-07-16 22:29:12.402 Connection "CID-30" has been terminated.
+2018-07-16 22:29:12.402 The connection with the client (IP address 179.132.168.87, Port number 64848) has been disconnected.
+2018-07-16 22:42:28.267 On the TCP Listener (Port 5555), a Client (IP address 176.239.55.76, Host name "176.239.55.76", Port number 35996) has connected.
+2018-07-16 22:42:28.267 For the client (IP address: 176.239.55.76, host name: "176.239.55.76", port number: 35996), connection "CID-31" has been created.
+2018-07-16 22:42:28.267 Connection "CID-31" has been terminated.
+2018-07-16 22:42:28.267 The connection with the client (IP address 176.239.55.76, Port number 35996) has been disconnected.
+2018-07-16 22:46:28.497 On the TCP Listener (Port 5555), a Client (IP address 172.58.99.219, Host name "172.58.99.219", Port number 19136) has connected.
+2018-07-16 22:46:28.497 For the client (IP address: 172.58.99.219, host name: "172.58.99.219", port number: 19136), connection "CID-32" has been created.
+2018-07-16 22:46:28.497 Connection "CID-32" has been terminated.
+2018-07-16 22:46:28.497 The connection with the client (IP address 172.58.99.219, Port number 19136) has been disconnected.
+2018-07-16 22:49:05.889 On the TCP Listener (Port 5555), a Client (IP address 172.56.35.187, Host name "172.56.35.187", Port number 28764) has connected.
+2018-07-16 22:49:05.889 For the client (IP address: 172.56.35.187, host name: "172.56.35.187", port number: 28764), connection "CID-33" has been created.
+2018-07-16 22:49:05.889 Connection "CID-33" has been terminated.
+2018-07-16 22:49:05.889 The connection with the client (IP address 172.56.35.187, Port number 28764) has been disconnected.
+2018-07-16 22:49:13.306 On the TCP Listener (Port 5555), a Client (IP address 211.36.138.80, Host name "211.36.138.80", Port number 41327) has connected.
+2018-07-16 22:49:13.306 For the client (IP address: 211.36.138.80, host name: "211.36.138.80", port number: 41327), connection "CID-34" has been created.
+2018-07-16 22:49:13.306 Connection "CID-34" has been terminated.
+2018-07-16 22:49:13.306 The connection with the client (IP address 211.36.138.80, Port number 41327) has been disconnected.
+2018-07-16 22:55:54.296 On the TCP Listener (Port 443), a Client (IP address 62.32.81.83, Host name "62.32.81.83", Port number 19715) has connected.
+2018-07-16 22:55:54.296 For the client (IP address: 62.32.81.83, host name: "62.32.81.83", port number: 19715), connection "CID-35" has been created.
+2018-07-16 22:55:55.921 Connection "CID-35" has been terminated.
+2018-07-16 22:55:55.921 The connection with the client (IP address 62.32.81.83, Port number 19715) has been disconnected.
+2018-07-16 23:09:10.811 On the TCP Listener (Port 5555), a Client (IP address 114.233.225.9, Host name "114.233.225.9", Port number 43231) has connected.
+2018-07-16 23:09:10.811 For the client (IP address: 114.233.225.9, host name: "114.233.225.9", port number: 43231), connection "CID-36" has been created.
+2018-07-16 23:09:10.811 Connection "CID-36" has been terminated.
+2018-07-16 23:09:10.811 The connection with the client (IP address 114.233.225.9, Port number 43231) has been disconnected.
+2018-07-16 23:29:48.118 On the TCP Listener (Port 443), a Client (IP address 218.211.168.176, Host name "218-211-168-176.ll.static.sparqnet.net", Port number 41150) has connected.
+2018-07-16 23:29:48.118 For the client (IP address: 218.211.168.176, host name: "218-211-168-176.ll.static.sparqnet.net", port number: 41150), connection "CID-37" has been created.
+2018-07-16 23:29:48.118 Connection "CID-37" has been terminated.
+2018-07-16 23:29:48.118 The connection with the client (IP address 218.211.168.176, Port number 41150) has been disconnected.
+2018-07-16 23:36:31.586 On the TCP Listener (Port 5555), a Client (IP address 61.239.48.47, Host name "061239048047.ctinets.com", Port number 39226) has connected.
+2018-07-16 23:36:31.586 For the client (IP address: 61.239.48.47, host name: "061239048047.ctinets.com", port number: 39226), connection "CID-38" has been created.
+2018-07-16 23:36:31.586 Connection "CID-38" has been terminated.
+2018-07-16 23:36:31.586 The connection with the client (IP address 61.239.48.47, Port number 39226) has been disconnected.
+2018-07-16 23:58:16.570 On the TCP Listener (Port 5555), a Client (IP address 117.111.28.246, Host name "117.111.28.246", Port number 14499) has connected.
+2018-07-16 23:58:16.570 For the client (IP address: 117.111.28.246, host name: "117.111.28.246", port number: 14499), connection "CID-39" has been created.
+2018-07-16 23:58:16.570 Connection "CID-39" has been terminated.
+2018-07-16 23:58:16.570 The connection with the client (IP address 117.111.28.246, Port number 14499) has been disconnected.

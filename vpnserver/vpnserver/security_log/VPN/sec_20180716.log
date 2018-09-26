@@ -1,0 +1,190 @@
+2018-07-16 18:01:49.312 SecureNAT has started. The SecureNAT session "SID-SECURENAT-1" was created.
+2018-07-16 18:01:49.312 The Virtual Hub is now online.
+2018-07-16 18:01:55.890 SecureNAT: It has been detected that the Kernel-mode NAT for SecureNAT can be run on the interface "ipv4_rawsocket_virtual_router". The Kernel-mode NAT is starting. The TCP, UDP and ICMP NAT processings will be performed with high-performance via Kernel-Mode hereafter. The parameters of Kernel-mode NAT: IP Address = "10.171.7.254", Subnet Mask = "255.255.255.252", Default Gateway = "10.171.7.253", Broadcast Address = "10.171.7.255", Virtual MAC Address: "DA-D7-EF-36-CE-D4", DHCP Server Address: "10.171.7.253", DNS Server Address: "157.7.180.133"
+2018-07-16 22:02:16.719 Administration mode [RPC-89] (Virtual Hub "VPN"): User "futatsusugimoto" has been created.
+2018-07-16 22:11:34.110 The connection "CID-26" (IP address: 218.188.222.205, Host name: static-bbs-205-222-188-218-on-nets.com, Port number: 1701, Client name: "L2TP VPN Client", Version: 4.27, Build: 9668) is attempting to connect to the Virtual Hub. The auth type provided is "External server authentication" and the user name is "futatsusugimoto".
+2018-07-16 22:11:34.110 Connection "CID-26": Successfully authenticated as user "futatsusugimoto".
+2018-07-16 22:11:34.110 Connection "CID-26": The new session "SID-FUTATSUSUGIMOTO-[L2TP]-2" has been created. (IP address: 218.188.222.205, Port number: 1701, Physical underlying protocol: "Legacy VPN - L2TP")
+2018-07-16 22:11:34.110 Session "SID-FUTATSUSUGIMOTO-[L2TP]-2": The parameter has been set. Max number of TCP connections: 1, Use of encryption: Yes, Use of compression: No, Use of Half duplex communication: No, Timeout: 20 seconds.
+2018-07-16 22:11:34.110 Session "SID-FUTATSUSUGIMOTO-[L2TP]-2": VPN Client details: (Client product name: "L2TP VPN Client", Client version: 427, Client build number: 9668, Server product name: "SoftEther VPN Server (64 bit)", Server version: 427, Server build number: 9668, Client OS name: "L2TP VPN Client", Client OS version: "-", Client product ID: "-", Client host name: "Johns-MacBook-Air.local", Client IP address: "218.188.222.205", Client port number: 1701, Server host name: "133.130.103.182", Server IP address: "133.130.103.182", Server port number: 1701, Proxy host name: "", Proxy IP address: "0.0.0.0", Proxy port number: 0, Virtual Hub name: "VPN", Client unique ID: "C011B21AED963BC822A578E318D466BE")
+2018-07-16 22:11:34.624 SecureNAT: The DHCP entry 1 has been created. MAC address: CA-F3-2D-02-2B-C6, IP address: 192.168.30.10, host name: Johns-MacBook-Air.local, expiration span: 7200 seconds
+2018-07-16 22:11:34.624 Session "SID-SECURENAT-1": The DHCP server of host "5E-4B-D6-03-2C-96" (192.168.30.1) on this session allocated, for host "SID-FUTATSUSUGIMOTO-[L2TP]-2" on another session "CA-F3-2D-02-2B-C6", the new IP address 192.168.30.10.
+2018-07-16 22:11:34.845 SecureNAT: The UDP session 1 has been created. Connection source 192.168.30.10:50502, Connection destination 192.168.30.1:53
+2018-07-16 22:11:34.845 SecureNAT: The UDP session 2 has been created. Connection source 192.168.30.10:63933, Connection destination 192.168.30.1:53
+2018-07-16 22:11:34.845 SecureNAT: The UDP session 3 has been created. Connection source 192.168.30.10:64532, Connection destination 192.168.30.1:53
+2018-07-16 22:11:34.845 SecureNAT: The UDP session 4 has been created. Connection source 192.168.30.10:49817, Connection destination 192.168.30.1:53
+2018-07-16 22:11:34.906 SecureNAT: The UDP session 5 has been created. Connection source 192.168.30.10:60126, Connection destination 192.168.30.1:53
+2018-07-16 22:11:34.906 SecureNAT: The UDP session 6 has been created. Connection source 192.168.30.10:54364, Connection destination 192.168.30.1:53
+2018-07-16 22:11:34.926 SecureNAT: The UDP session 7 has been created. Connection source 192.168.30.10:65090, Connection destination 192.168.30.1:53
+2018-07-16 22:11:34.966 SecureNAT: The UDP session 8 has been created. Connection source 192.168.30.10:50455, Connection destination 192.168.30.1:53
+2018-07-16 22:11:35.531 SecureNAT: The UDP session 9 has been created. Connection source 192.168.30.10:50544, Connection destination 192.168.30.1:53
+2018-07-16 22:11:35.541 SecureNAT: The UDP session 10 has been created. Connection source 192.168.30.10:63640, Connection destination 192.168.30.1:53
+2018-07-16 22:11:35.541 SecureNAT: The UDP session 11 has been created. Connection source 192.168.30.10:61921, Connection destination 192.168.30.1:53
+2018-07-16 22:11:35.541 SecureNAT: The UDP session 12 has been created. Connection source 192.168.30.10:54097, Connection destination 192.168.30.1:53
+2018-07-16 22:11:35.541 SecureNAT: The UDP session 13 has been created. Connection source 192.168.30.10:62086, Connection destination 192.168.30.1:53
+2018-07-16 22:11:35.541 SecureNAT: The UDP session 14 has been created. Connection source 192.168.30.10:62182, Connection destination 192.168.30.1:53
+2018-07-16 22:11:35.753 SecureNAT: The UDP session 15 has been created. Connection source 192.168.30.10:52581, Connection destination 192.168.30.1:53
+2018-07-16 22:11:38.808 SecureNAT: The UDP session 16 has been created. Connection source 192.168.30.10:54733, Connection destination 192.168.30.1:53
+2018-07-16 22:11:41.299 SecureNAT: The UDP session 17 has been created. Connection source 192.168.30.10:61049, Connection destination 192.168.30.1:53
+2018-07-16 22:11:41.299 SecureNAT: The UDP session 18 has been created. Connection source 192.168.30.10:58177, Connection destination 192.168.30.1:53
+2018-07-16 22:11:41.299 SecureNAT: The UDP session 19 has been created. Connection source 192.168.30.10:57418, Connection destination 192.168.30.1:53
+2018-07-16 22:11:41.299 SecureNAT: The UDP session 20 has been created. Connection source 192.168.30.10:64596, Connection destination 192.168.30.1:53
+2018-07-16 22:11:41.299 SecureNAT: The UDP session 21 has been created. Connection source 192.168.30.10:51152, Connection destination 192.168.30.1:53
+2018-07-16 22:11:41.299 SecureNAT: The UDP session 22 has been created. Connection source 192.168.30.10:55870, Connection destination 192.168.30.1:53
+2018-07-16 22:11:41.359 SecureNAT: The UDP session 23 has been created. Connection source 192.168.30.10:55913, Connection destination 192.168.30.1:53
+2018-07-16 22:11:41.359 SecureNAT: The UDP session 24 has been created. Connection source 192.168.30.10:53535, Connection destination 192.168.30.1:53
+2018-07-16 22:11:41.359 SecureNAT: The UDP session 25 has been created. Connection source 192.168.30.10:63039, Connection destination 192.168.30.1:53
+2018-07-16 22:11:41.359 SecureNAT: The UDP session 26 has been created. Connection source 192.168.30.10:56293, Connection destination 192.168.30.1:53
+2018-07-16 22:11:42.044 SecureNAT: The UDP session 27 has been created. Connection source 192.168.30.10:57628, Connection destination 192.168.30.1:53
+2018-07-16 22:11:43.617 SecureNAT: The UDP session 28 has been created. Connection source 192.168.30.10:65213, Connection destination 192.168.30.1:53
+2018-07-16 22:11:43.617 SecureNAT: The UDP session 29 has been created. Connection source 192.168.30.10:63683, Connection destination 192.168.30.1:53
+2018-07-16 22:11:43.627 SecureNAT: The UDP session 30 has been created. Connection source 192.168.30.10:54559, Connection destination 192.168.30.1:53
+2018-07-16 22:11:43.677 SecureNAT: The UDP session 31 has been created. Connection source 192.168.30.10:51181, Connection destination 192.168.30.1:53
+2018-07-16 22:11:45.441 SecureNAT: The UDP session 32 has been created. Connection source 192.168.30.10:63328, Connection destination 192.168.30.1:53
+2018-07-16 22:11:45.744 SecureNAT: The UDP session 33 has been created. Connection source 192.168.30.10:60936, Connection destination 192.168.30.1:53
+2018-07-16 22:11:48.325 SecureNAT: The UDP session 34 has been created. Connection source 192.168.30.10:51426, Connection destination 192.168.30.1:53
+2018-07-16 22:11:49.354 SecureNAT: The UDP session 35 has been created. Connection source 192.168.30.10:51148, Connection destination 192.168.30.1:53
+2018-07-16 22:11:50.665 SecureNAT: The UDP session 36 has been created. Connection source 192.168.30.10:62155, Connection destination 192.168.30.1:53
+2018-07-16 22:11:56.229 SecureNAT: The UDP session 37 has been created. Connection source 192.168.30.10:57349, Connection destination 192.168.30.1:53
+2018-07-16 22:11:56.229 SecureNAT: The UDP session 38 has been created. Connection source 192.168.30.10:55579, Connection destination 192.168.30.1:53
+2018-07-16 22:11:56.894 SecureNAT: The UDP session 39 has been created. Connection source 192.168.30.10:55834, Connection destination 192.168.30.1:53
+2018-07-16 22:11:58.084 SecureNAT: The UDP session 40 has been created. Connection source 192.168.30.10:63676, Connection destination 192.168.30.1:53
+2018-07-16 22:11:58.084 SecureNAT: The UDP session 41 has been created. Connection source 192.168.30.10:50807, Connection destination 192.168.30.1:53
+2018-07-16 22:11:58.599 SecureNAT: The UDP session 42 has been created. Connection source 192.168.30.10:61910, Connection destination 192.168.30.1:53
+2018-07-16 22:11:58.599 SecureNAT: The UDP session 43 has been created. Connection source 192.168.30.10:61218, Connection destination 192.168.30.1:53
+2018-07-16 22:11:58.599 SecureNAT: The UDP session 44 has been created. Connection source 192.168.30.10:51807, Connection destination 192.168.30.1:53
+2018-07-16 22:11:58.599 SecureNAT: The UDP session 45 has been created. Connection source 192.168.30.10:65255, Connection destination 192.168.30.1:53
+2018-07-16 22:11:58.771 SecureNAT: The UDP session 46 has been created. Connection source 192.168.30.10:63745, Connection destination 192.168.30.1:53
+2018-07-16 22:11:58.771 SecureNAT: The UDP session 47 has been created. Connection source 192.168.30.10:53438, Connection destination 192.168.30.1:53
+2018-07-16 22:11:58.912 SecureNAT: The UDP session 48 has been created. Connection source 192.168.30.10:52067, Connection destination 192.168.30.1:53
+2018-07-16 22:11:58.912 SecureNAT: The UDP session 49 has been created. Connection source 192.168.30.10:57978, Connection destination 192.168.30.1:53
+2018-07-16 22:11:58.912 SecureNAT: The UDP session 50 has been created. Connection source 192.168.30.10:58757, Connection destination 192.168.30.1:53
+2018-07-16 22:12:00.958 SecureNAT: The UDP session 51 has been created. Connection source 192.168.30.10:60188, Connection destination 192.168.30.1:53
+2018-07-16 22:12:07.474 SecureNAT: The UDP session 52 has been created. Connection source 192.168.30.10:58825, Connection destination 192.168.30.1:53
+2018-07-16 22:12:35.081 SecureNAT: The UDP session 4 has been deleted.
+2018-07-16 22:12:35.081 SecureNAT: The UDP session 8 has been deleted.
+2018-07-16 22:12:35.081 SecureNAT: The UDP session 1 has been deleted.
+2018-07-16 22:12:35.081 SecureNAT: The UDP session 6 has been deleted.
+2018-07-16 22:12:35.081 SecureNAT: The UDP session 5 has been deleted.
+2018-07-16 22:12:35.081 SecureNAT: The UDP session 2 has been deleted.
+2018-07-16 22:12:35.081 SecureNAT: The UDP session 3 has been deleted.
+2018-07-16 22:12:35.081 SecureNAT: The UDP session 7 has been deleted.
+2018-07-16 22:12:35.596 SecureNAT: The UDP session 9 has been deleted.
+2018-07-16 22:12:35.596 SecureNAT: The UDP session 12 has been deleted.
+2018-07-16 22:12:35.596 SecureNAT: The UDP session 11 has been deleted.
+2018-07-16 22:12:35.596 SecureNAT: The UDP session 14 has been deleted.
+2018-07-16 22:12:35.596 SecureNAT: The UDP session 10 has been deleted.
+2018-07-16 22:12:35.848 SecureNAT: The UDP session 15 has been deleted.
+2018-07-16 22:12:35.848 SecureNAT: The UDP session 13 has been deleted.
+2018-07-16 22:12:38.923 SecureNAT: The UDP session 16 has been deleted.
+2018-07-16 22:12:41.486 SecureNAT: The UDP session 21 has been deleted.
+2018-07-16 22:12:41.486 SecureNAT: The UDP session 24 has been deleted.
+2018-07-16 22:12:41.486 SecureNAT: The UDP session 22 has been deleted.
+2018-07-16 22:12:41.486 SecureNAT: The UDP session 23 has been deleted.
+2018-07-16 22:12:41.486 SecureNAT: The UDP session 26 has been deleted.
+2018-07-16 22:12:41.486 SecureNAT: The UDP session 19 has been deleted.
+2018-07-16 22:12:41.486 SecureNAT: The UDP session 18 has been deleted.
+2018-07-16 22:12:41.486 SecureNAT: The UDP session 17 has been deleted.
+2018-07-16 22:12:41.486 SecureNAT: The UDP session 25 has been deleted.
+2018-07-16 22:12:41.486 SecureNAT: The UDP session 20 has been deleted.
+2018-07-16 22:12:42.264 SecureNAT: The UDP session 27 has been deleted.
+2018-07-16 22:12:43.796 SecureNAT: The UDP session 31 has been deleted.
+2018-07-16 22:12:43.796 SecureNAT: The UDP session 30 has been deleted.
+2018-07-16 22:12:43.796 SecureNAT: The UDP session 29 has been deleted.
+2018-07-16 22:12:43.796 SecureNAT: The UDP session 28 has been deleted.
+2018-07-16 22:12:45.590 SecureNAT: The UDP session 32 has been deleted.
+2018-07-16 22:12:45.852 SecureNAT: The UDP session 33 has been deleted.
+2018-07-16 22:12:47.820 SecureNAT: The UDP session 53 has been created. Connection source 192.168.30.10:62300, Connection destination 192.168.30.1:53
+2018-07-16 22:12:48.334 SecureNAT: The UDP session 34 has been deleted.
+2018-07-16 22:12:48.707 SecureNAT: The UDP session 54 has been created. Connection source 192.168.30.10:55012, Connection destination 192.168.30.1:53
+2018-07-16 22:12:49.605 SecureNAT: The UDP session 35 has been deleted.
+2018-07-16 22:12:50.886 SecureNAT: The UDP session 36 has been deleted.
+2018-07-16 22:12:54.879 SecureNAT: The UDP session 55 has been created. Connection source 192.168.30.10:64732, Connection destination 192.168.30.1:53
+2018-07-16 22:12:55.374 SecureNAT: The UDP session 56 has been created. Connection source 192.168.30.10:58018, Connection destination 192.168.30.1:53
+2018-07-16 22:12:55.576 SecureNAT: The UDP session 57 has been created. Connection source 192.168.30.10:57488, Connection destination 192.168.30.1:53
+2018-07-16 22:12:56.413 SecureNAT: The UDP session 58 has been created. Connection source 192.168.30.10:51815, Connection destination 192.168.30.1:53
+2018-07-16 22:12:56.413 SecureNAT: The UDP session 38 has been deleted.
+2018-07-16 22:12:56.413 SecureNAT: The UDP session 37 has been deleted.
+2018-07-16 22:12:57.099 SecureNAT: The UDP session 39 has been deleted.
+2018-07-16 22:12:58.118 SecureNAT: The UDP session 41 has been deleted.
+2018-07-16 22:12:58.118 SecureNAT: The UDP session 40 has been deleted.
+2018-07-16 22:12:58.632 SecureNAT: The UDP session 44 has been deleted.
+2018-07-16 22:12:58.632 SecureNAT: The UDP session 43 has been deleted.
+2018-07-16 22:12:58.632 SecureNAT: The UDP session 42 has been deleted.
+2018-07-16 22:12:58.632 SecureNAT: The UDP session 45 has been deleted.
+2018-07-16 22:12:58.894 SecureNAT: The UDP session 47 has been deleted.
+2018-07-16 22:12:58.894 SecureNAT: The UDP session 46 has been deleted.
+2018-07-16 22:12:59.146 SecureNAT: The UDP session 48 has been deleted.
+2018-07-16 22:12:59.146 SecureNAT: The UDP session 49 has been deleted.
+2018-07-16 22:12:59.146 SecureNAT: The UDP session 50 has been deleted.
+2018-07-16 22:13:01.193 SecureNAT: The UDP session 51 has been deleted.
+2018-07-16 22:13:07.861 SecureNAT: The UDP session 52 has been deleted.
+2018-07-16 22:13:40.077 SecureNAT: The UDP session 59 has been created. Connection source 192.168.30.10:60986, Connection destination 192.168.30.1:53
+2018-07-16 22:13:40.077 SecureNAT: The UDP session 60 has been created. Connection source 192.168.30.10:49887, Connection destination 192.168.30.1:53
+2018-07-16 22:13:40.087 SecureNAT: The UDP session 61 has been created. Connection source 192.168.30.10:55678, Connection destination 192.168.30.1:53
+2018-07-16 22:13:42.719 SecureNAT: The UDP session 62 has been created. Connection source 192.168.30.10:53742, Connection destination 192.168.30.1:53
+2018-07-16 22:13:43.525 SecureNAT: The UDP session 63 has been created. Connection source 192.168.30.10:52862, Connection destination 192.168.30.1:53
+2018-07-16 22:13:46.963 SecureNAT: The UDP session 64 has been created. Connection source 192.168.30.10:62938, Connection destination 192.168.30.1:53
+2018-07-16 22:13:46.963 SecureNAT: The UDP session 65 has been created. Connection source 192.168.30.10:62832, Connection destination 192.168.30.1:53
+2018-07-16 22:13:46.963 SecureNAT: The UDP session 66 has been created. Connection source 192.168.30.10:64557, Connection destination 192.168.30.1:53
+2018-07-16 22:13:47.991 SecureNAT: The UDP session 53 has been deleted.
+2018-07-16 22:13:49.009 SecureNAT: The UDP session 54 has been deleted.
+2018-07-16 22:13:54.908 SecureNAT: The UDP session 55 has been deleted.
+2018-07-16 22:13:54.949 SecureNAT: The UDP session 67 has been created. Connection source 192.168.30.10:59432, Connection destination 192.168.30.1:53
+2018-07-16 22:13:55.140 SecureNAT: The UDP session 68 has been created. Connection source 192.168.30.10:62492, Connection destination 192.168.30.1:53
+2018-07-16 22:13:55.403 SecureNAT: The UDP session 56 has been deleted.
+2018-07-16 22:13:55.917 SecureNAT: The UDP session 57 has been deleted.
+2018-07-16 22:13:56.683 SecureNAT: The UDP session 58 has been deleted.
+2018-07-16 22:14:40.252 SecureNAT: The UDP session 60 has been deleted.
+2018-07-16 22:14:40.252 SecureNAT: The UDP session 61 has been deleted.
+2018-07-16 22:14:40.252 SecureNAT: The UDP session 59 has been deleted.
+2018-07-16 22:14:42.812 SecureNAT: The UDP session 62 has been deleted.
+2018-07-16 22:14:43.588 SecureNAT: The UDP session 63 has been deleted.
+2018-07-16 22:14:47.176 SecureNAT: The UDP session 65 has been deleted.
+2018-07-16 22:14:47.176 SecureNAT: The UDP session 64 has been deleted.
+2018-07-16 22:14:47.176 SecureNAT: The UDP session 66 has been deleted.
+2018-07-16 22:14:55.120 SecureNAT: The UDP session 67 has been deleted.
+2018-07-16 22:14:55.372 SecureNAT: The UDP session 68 has been deleted.
+2018-07-16 22:19:33.348 SecureNAT: The UDP session 69 has been created. Connection source 192.168.30.10:53410, Connection destination 192.168.30.1:53
+2018-07-16 22:19:33.348 SecureNAT: The UDP session 70 has been created. Connection source 192.168.30.10:50848, Connection destination 192.168.30.1:53
+2018-07-16 22:19:33.570 SecureNAT: The UDP session 71 has been created. Connection source 192.168.30.10:57938, Connection destination 192.168.30.1:53
+2018-07-16 22:19:33.570 SecureNAT: The UDP session 72 has been created. Connection source 192.168.30.10:53820, Connection destination 192.168.30.1:53
+2018-07-16 22:19:34.618 SecureNAT: The UDP session 73 has been created. Connection source 192.168.30.10:52698, Connection destination 192.168.30.1:53
+2018-07-16 22:19:34.618 SecureNAT: The UDP session 74 has been created. Connection source 192.168.30.10:62782, Connection destination 192.168.30.1:53
+2018-07-16 22:19:34.618 SecureNAT: The UDP session 75 has been created. Connection source 192.168.30.10:51050, Connection destination 192.168.30.1:53
+2018-07-16 22:19:34.618 SecureNAT: The UDP session 76 has been created. Connection source 192.168.30.10:61011, Connection destination 192.168.30.1:53
+2018-07-16 22:19:34.618 SecureNAT: The UDP session 77 has been created. Connection source 192.168.30.10:59410, Connection destination 192.168.30.1:53
+2018-07-16 22:19:34.618 SecureNAT: The UDP session 78 has been created. Connection source 192.168.30.10:52104, Connection destination 192.168.30.1:53
+2018-07-16 22:19:36.291 SecureNAT: The UDP session 79 has been created. Connection source 192.168.30.10:58889, Connection destination 192.168.30.1:53
+2018-07-16 22:19:36.754 SecureNAT: The UDP session 80 has been created. Connection source 192.168.30.10:53745, Connection destination 192.168.30.1:53
+2018-07-16 22:19:36.754 SecureNAT: The UDP session 81 has been created. Connection source 192.168.30.10:55301, Connection destination 192.168.30.1:53
+2018-07-16 22:19:37.923 SecureNAT: The UDP session 82 has been created. Connection source 192.168.30.10:50913, Connection destination 192.168.30.1:53
+2018-07-16 22:19:41.158 SecureNAT: The UDP session 83 has been created. Connection source 192.168.30.10:50679, Connection destination 192.168.30.1:53
+2018-07-16 22:19:41.169 SecureNAT: The UDP session 84 has been created. Connection source 192.168.30.10:57511, Connection destination 192.168.30.1:53
+2018-07-16 22:20:33.459 SecureNAT: The UDP session 70 has been deleted.
+2018-07-16 22:20:33.459 SecureNAT: The UDP session 69 has been deleted.
+2018-07-16 22:20:33.711 SecureNAT: The UDP session 72 has been deleted.
+2018-07-16 22:20:33.711 SecureNAT: The UDP session 71 has been deleted.
+2018-07-16 22:20:34.738 SecureNAT: The UDP session 75 has been deleted.
+2018-07-16 22:20:34.738 SecureNAT: The UDP session 78 has been deleted.
+2018-07-16 22:20:34.738 SecureNAT: The UDP session 73 has been deleted.
+2018-07-16 22:20:34.738 SecureNAT: The UDP session 77 has been deleted.
+2018-07-16 22:20:34.738 SecureNAT: The UDP session 76 has been deleted.
+2018-07-16 22:20:34.738 SecureNAT: The UDP session 74 has been deleted.
+2018-07-16 22:20:36.533 SecureNAT: The UDP session 79 has been deleted.
+2018-07-16 22:20:36.795 SecureNAT: The UDP session 80 has been deleted.
+2018-07-16 22:20:36.795 SecureNAT: The UDP session 81 has been deleted.
+2018-07-16 22:20:38.075 SecureNAT: The UDP session 82 has been deleted.
+2018-07-16 22:20:41.401 SecureNAT: The UDP session 83 has been deleted.
+2018-07-16 22:20:41.401 SecureNAT: The UDP session 84 has been deleted.
+2018-07-16 22:20:41.805 SecureNAT: The UDP session 85 has been created. Connection source 192.168.30.10:50558, Connection destination 192.168.30.1:53
+2018-07-16 22:20:41.805 SecureNAT: The UDP session 86 has been created. Connection source 192.168.30.10:56799, Connection destination 192.168.30.1:53
+2018-07-16 22:20:41.875 SecureNAT: The UDP session 87 has been created. Connection source 192.168.30.10:56361, Connection destination 192.168.30.1:53
+2018-07-16 22:20:41.875 SecureNAT: The UDP session 88 has been created. Connection source 192.168.30.10:57024, Connection destination 192.168.30.1:53
+2018-07-16 22:20:41.875 SecureNAT: The UDP session 89 has been created. Connection source 192.168.30.10:55184, Connection destination 192.168.30.1:53
+2018-07-16 22:21:41.841 SecureNAT: The UDP session 85 has been deleted.
+2018-07-16 22:21:41.841 SecureNAT: The UDP session 86 has been deleted.
+2018-07-16 22:21:42.103 SecureNAT: The UDP session 87 has been deleted.
+2018-07-16 22:21:42.103 SecureNAT: The UDP session 88 has been deleted.
+2018-07-16 22:21:42.103 SecureNAT: The UDP session 89 has been deleted.
+2018-07-16 22:22:12.055 Session "SID-FUTATSUSUGIMOTO-[L2TP]-2": The session has been terminated. The statistical information is as follows: Total outgoing data size: 34951 bytes, Total incoming data size: 14843 bytes.
