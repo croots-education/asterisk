@@ -1,0 +1,23 @@
+#!/usr/bin/perl
+
+use strict;
+
+$| = 1;
+
+my %AGI;
+my $extension;
+
+while(<STDIN>) {
+        chomp;
+        last unless length($_);
+        if(/^agi_(\w+):\s+(.*)$/) {
+                $AGI{$1} = $2;
+        }
+}
+
+($extension = $AGI{'extension'}) =~ s/\D//g;
+
+print "SET CALLERID <$AGI{'callerid'}>\n";
+print "SET EXTENSION $extension\n";
+
+exit 1;

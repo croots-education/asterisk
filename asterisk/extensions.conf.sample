@@ -1,0 +1,23 @@
+[incoming]
+; 契約番号以外は着信できないようにする。
+; 815012345678 部分を sip.conf の register 行の最後の / 以降の値と同じものを設定する。
+exten => 815012345678,1,AGI(incoming.agi)
+exten => 815012345678,n,Dial(SIP/201)
+exten => 815012345678,n,Hangup
+
+;; 契約番号が複数ある場合、追加番号分も記載する。
+;; 815012345679 部分を sip.conf の register 行の最後の / 以降の値と同じものを設定する。
+;exten => 815012345679,1,AGI(incoming.agi)
+;exten => 815012345679,n,Dial(SIP/201)
+;exten => 815012345679,n,Hangup
+
+
+[default]
+; outgoing
+; "0"発信を想定
+exten => _0.,1,AGI(outgoing.agi)
+exten => _0.,n,Dial(SIP/fusion1/${EXTEN})
+exten => _0.,n,Hangup
+
+exten => _XXX,1,Dial(SIP/${EXTEN})
+exten => _XXX,n,Hangup

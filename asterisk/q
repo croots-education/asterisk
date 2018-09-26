@@ -1,0 +1,82 @@
+[general]
+maxexpiry=3600
+defaultexpiry=3600              ; 設定必須
+registertimeout=300
+rtptimeout=60
+rtpholdtimeout=300
+context=incoming
+transport=udp
+udpbindaddr=0.0.0.0:5060
+disallow=all                    ; 設定必須
+allow=ulaw                      ; 設定必須
+dtmfmode=auto
+allowguest=yes
+ignoresdpversion=yes            ; IP電話サービスのI/F仕様
+nat=yes
+;OpenGateのREGISTER例
+register => 55835992:u8d6ZhRf@smart.0038.net
+
+;OpenGateのピア定
+[fusion1] ; IP電話サービス用
+; ※IP電話サービスは、OPTIONSメソッドをサポートしません。
+;   qualifyオプションはDefault(記述なし)か無効に設定してください。
+type=friend
+defaultuser=55835992        ; 開通通知に記載されたSIPアカウント
+fromuser=55835992        ; 開通通知に記載されたSIPアカウント
+host=smart.0038.net
+fromdomain=smart.0038.net
+context=incoming
+insecure=port,invite
+canreinvite=no
+dtmfmode=inband                 ; inbandまたはaut
+secret=u8d6ZhRf
+nat=yes
+
+[201] ; 内線用
+; ※セキュリティの観点からsecretオプションは複雑なパスワードの設定を
+;   推奨します。
+type=friend
+defaultuser=201
+secret=shun                 ; 8文字以上かつ記号を含めたパスワード
+directmedia=no
+host=dynamic
+context=default
+dtmfmode=auto
+fusioncom=no
+
+[202] ; 内線用
+; ※セキュリティの観点からsecretオプションは複雑なパスワードの設定を
+;   推奨します。
+type=friend
+defaultuser=202
+secret=futatsu                 ; 8文字以上かつ記号を含めたパスワード
+directmedia=no
+host=dynamic
+context=default
+dtmfmode=auto
+fusioncom=no
+
+[203] ; 内線用
+; ※セキュリティの観点からsecretオプションは複雑なパスワードの設定を
+;   推奨します。
+type=friend
+defaultuser=203
+secret=naoki                 ; 8文字以上かつ記号を含めたパスワード
+directmedia=no
+host=dynamic
+context=default
+dtmfmode=auto
+fusioncom=no
+
+
+[901] ; 内線用
+; ※セキュリティの観点からsecretオプションは複雑なパスワードの設定を
+;   推奨します。
+type=friend
+defaultuser=901
+secret=daihyodesk                 ; 8文字以上かつ記号を含めたパスワード
+directmedia=no
+host=dynamic
+context=default
+dtmfmode=auto
+fusioncom=no

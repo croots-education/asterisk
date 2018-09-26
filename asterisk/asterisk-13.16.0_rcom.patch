@@ -1,0 +1,639 @@
+diff --git a/channels/chan_sip.c b/channels/chan_sip.c
+index 1994103..c927d11 100644
+--- a/channels/chan_sip.c
++++ b/channels/chan_sip.c
+@@ -1111,6 +1111,12 @@ struct ao2_container *sip_monitor_instances;
+ 
+ struct show_peers_context;
+ 
++static struct ast_register_for_timeout {
++	int timeout;
++	char username[SIPBUFSIZE];
++	char hostname[SIPBUFSIZE];
++} regl;
++
+ /*---------------------------- Forward declarations of functions in chan_sip.c */
+ /* Note: This is added to help splitting up chan_sip.c into several files
+ 	in coming releases. */
+@@ -4353,7 +4359,11 @@ static int __sip_autodestruct(const void *data)
+ 	if (p->refer && !p->alreadygone) {
+ 		ast_debug(3, "Finally hanging up channel after transfer: %s\n", p->callid);
+ 		stop_media_flows(p);
+-		transmit_request_with_auth(p, SIP_BYE, 0, XMIT_RELIABLE, 1);
++		if (!ast_test_flag(&p->flags[2], SIP_PAGE3_FUSIONCOM)) {
++			transmit_request_with_auth(p, SIP_BYE, 0, XMIT_RELIABLE, 1);
++		} else {
++			transmit_request(p, SIP_BYE, 0, XMIT_RELIABLE, 1);
++		}
+ 		append_history(p, "ReferBYE", "Sending BYE on transferer call leg %s", p->callid);
+ 		sip_scheddestroy(p, DEFAULT_TRANS_TIMEOUT);
+ 		sip_pvt_unlock(p);
+@@ -4611,6 +4621,9 @@ static int send_provisional_keepalive_full(struct sip_pvt *pvt, int with_sdp)
+ 	}
+ 
+ 	if (pvt->invitestate < INV_COMPLETED) {
++		if (ast_test_flag(&pvt->flags[2], SIP_PAGE3_FUSIONCOM)) {
++			;
++		} else
+ 		if (with_sdp) {
+ 			transmit_response_with_sdp(pvt, S_OR(msg, pvt->last_provisional), &pvt->initreq, XMIT_UNRELIABLE, FALSE, FALSE);
+ 		} else {
+@@ -6173,9 +6186,16 @@ static int create_addr_from_peer(struct sip_pvt *dialog, struct sip_peer *peer)
+ 				*new_callid = '\0';
+ 
+ 				/* Change the dialog callid. */
+-				callid_size = strlen(tmpcall) + strlen(peer->fromdomain) + 2;
+-				new_callid = ast_alloca(callid_size);
+-				snprintf(new_callid, callid_size, "%s@%s", tmpcall, peer->fromdomain);
++				if (!ast_test_flag(&dialog->flags[2], SIP_PAGE3_FUSIONCOM)) {
++					callid_size = strlen(tmpcall) + strlen(peer->fromdomain) + 2;
++					new_callid = ast_alloca(callid_size);
++					snprintf(new_callid, callid_size, "%s@%s", tmpcall, peer->fromdomain);
++				}
++				else {
++					callid_size = strlen(tmpcall) + strlen(ast_sockaddr_stringify_addr(&dialog->ourip)) + 2;
++					new_callid = alloca(callid_size);
++					snprintf(new_callid, callid_size, "%s@%s", tmpcall, ast_sockaddr_stringify_addr(&dialog->ourip));
++				}
+ 				change_callid_pvt(dialog, new_callid);
+ 			}
+ 		}
+@@ -7284,7 +7304,11 @@ static int sip_hangup(struct ast_channel *ast)
+ 
+ 				/* Send a hangup */
+ 				if (ast_channel_state(oldowner) == AST_STATE_UP) {
+-					transmit_request_with_auth(p, SIP_BYE, 0, XMIT_RELIABLE, 1);
++					if (!ast_test_flag(&p->flags[2], SIP_PAGE3_FUSIONCOM)) {
++						transmit_request_with_auth(p, SIP_BYE, 0, XMIT_RELIABLE, 1);
++					} else {
++						transmit_request(p, SIP_BYE, 0, XMIT_RELIABLE, 1);
++					}
+ 				}
+ 
+ 			} else {
+@@ -7455,8 +7479,13 @@ static int sip_write(struct ast_channel *ast, struct ast_frame *frame)
+ 					ast_rtp_instance_update_source(p->rtp);
+ 					if (!global_prematuremediafilter) {
+ 						p->invitestate = INV_EARLY_MEDIA;
+-						transmit_provisional_response(p, "183 Session Progress", &p->initreq, TRUE);
+-						ast_set_flag(&p->flags[0], SIP_PROGRESS_SENT);
++						if (!ast_test_flag(&p->flags[2], SIP_PAGE3_FUSIONCOM)) {
++							transmit_provisional_response(p, "183 Session Progress", &p->initreq, TRUE);
++							ast_set_flag(&p->flags[0], SIP_PROGRESS_SENT);
++						} else {
++							transmit_provisional_response(p, "180 Ringing", &p->initreq, 0);
++							ast_set_flag(&p->flags[0], SIP_RINGING);
++						}
+ 					}
+ 				}
+ 				if (p->invitestate > INV_EARLY_MEDIA || (p->invitestate == INV_EARLY_MEDIA &&
+@@ -7949,7 +7978,7 @@ static int sip_indicate(struct ast_channel *ast, int condition, const void *data
+ 		    !ast_test_flag(&p->flags[0], SIP_OUTGOING)) {
+ 			p->invitestate = INV_EARLY_MEDIA;
+ 			/* SIP_PROG_INBAND_NEVER means sending 180 ringing in place of a 183 */
+-			if (ast_test_flag(&p->flags[0], SIP_PROG_INBAND) != SIP_PROG_INBAND_NEVER) {
++			if (ast_test_flag(&p->flags[0], SIP_PROG_INBAND) != SIP_PROG_INBAND_NEVER && !ast_test_flag(&p->flags[2], SIP_PAGE3_FUSIONCOM)) {
+ 				transmit_provisional_response(p, "183 Session Progress", &p->initreq, TRUE);
+ 				ast_set_flag(&p->flags[0], SIP_PROGRESS_SENT);
+ 			} else if (ast_channel_state(ast) == AST_STATE_RING && !ast_test_flag(&p->flags[0], SIP_RINGING)) {
+@@ -8745,7 +8774,11 @@ static void build_callid_pvt(struct sip_pvt *pvt)
+ 	char buf[33];
+ 	const char *host = S_OR(pvt->fromdomain, ast_sockaddr_stringify_remote(&pvt->ourip));
+ 
+-	ast_string_field_build(pvt, callid, "%s@%s", generate_random_string(buf, sizeof(buf)), host);
++	if (!ast_test_flag(&pvt->flags[2], SIP_PAGE3_FUSIONCOM)) {
++		ast_string_field_build(pvt, callid, "%s@%s", generate_random_string(buf, sizeof(buf)), host);
++	} else {
++		ast_string_field_build(pvt, callid, "%s@%s", generate_random_string(buf, sizeof(buf)), ast_sockaddr_stringify_remote(&pvt->ourip));
++	}
+ }
+ 
+ /*! \brief Unlink the given object from the container and return TRUE if it was in the container. */
+@@ -11886,7 +11919,9 @@ static int copy_via_headers(struct sip_pvt *p, struct sip_request *req, const st
+ 					leftmost, ast_sockaddr_stringify_addr_remote(&p->recv),
+ 					others ? "," : "", others ? others : "");
+ 			}
+-			oh = new;	/* the header to copy */
++			if (!ast_test_flag(&p->flags[2], SIP_PAGE3_FUSIONCOM)) {
++				oh = new;	/* the header to copy */
++			}
+ 		}  /* else add the following via headers untouched */
+ 		add_header(req, field, oh);
+ 		copied++;
+@@ -12151,10 +12186,14 @@ static int respprep(struct sip_request *resp, struct sip_pvt *p, const char *msg
+ 	add_header(resp, "To", ot);
+ 	copy_header(resp, req, "Call-ID");
+ 	copy_header(resp, req, "CSeq");
+-	if (!ast_strlen_zero(global_useragent))
+-		add_header(resp, "Server", global_useragent);
+-	add_header(resp, "Allow", ALLOWED_METHODS);
+-	add_supported(p, resp);
++	if (!ast_test_flag(&p->flags[2], SIP_PAGE3_FUSIONCOM)) {
++		if (!ast_strlen_zero(global_useragent))
++			add_header(resp, "Server", global_useragent);
++		add_header(resp, "Allow", ALLOWED_METHODS);
++		add_supported(p, resp);
++	} else {
++		add_header(resp, "Allow", ALLOWED_METHODS_F);
++	}
+ 
+ 	/* If this is an invite, add Session-Timers related headers if the feature is active for this session */
+ 	if (p->method == SIP_INVITE && p->stimer && p->stimer->st_active == TRUE) {
+@@ -12194,7 +12233,9 @@ static int respprep(struct sip_request *resp, struct sip_pvt *p, const char *msg
+ 			copy_header(resp, req, "Path");
+ 		}
+ 	} else if (!ast_strlen_zero(p->our_contact) && resp_needs_contact(msg, p->method)) {
+-		add_header(resp, "Contact", p->our_contact);
++		if (!ast_test_flag(&p->flags[2], SIP_PAGE3_FUSIONCOM) || strncmp(msg, "1", 1)) {
++			add_header(resp, "Contact", p->our_contact);
++		}
+ 	}
+ 
+ 	if (!ast_strlen_zero(p->url)) {
+@@ -12290,7 +12331,7 @@ static int reqprep(struct sip_request *req, struct sip_pvt *p, int sipmethod, ui
+ 	 * as the original INVITE.
+ 	 * Send UPDATE to the same destination as CANCEL, if call is not in final state.
+ 	 */
+-	if (!sip_route_empty(&p->route) &&
++	if (!ast_test_flag(&p->flags[2], SIP_PAGE3_FUSIONCOM) && !sip_route_empty(&p->route) &&
+ 			!(sipmethod == SIP_CANCEL ||
+ 				(sipmethod == SIP_ACK && (p->invitestate == INV_COMPLETED || p->invitestate == INV_CANCELLED)) ||
+ 				(sipmethod == SIP_UPDATE && (p->invitestate == INV_PROCEEDING || p->invitestate == INV_EARLY_MEDIA)))) {
+@@ -12340,7 +12381,11 @@ static int reqprep(struct sip_request *req, struct sip_pvt *p, int sipmethod, ui
+ 	add_header(req, "CSeq", tmp);
+ 
+ 	if (!ast_strlen_zero(global_useragent))
+-		add_header(req, "User-Agent", global_useragent);
++		if (!ast_test_flag(&p->flags[2], SIP_PAGE3_FUSIONCOM) ||
++			sipmethod == SIP_BYE || sipmethod == SIP_INVITE || sipmethod == SIP_REGISTER)
++		{
++			add_header(req, "User-Agent", global_useragent);
++		}
+ 
+ 	if (!ast_strlen_zero(p->url)) {
+ 		add_header(req, "Access-URL", p->url);
+@@ -12419,9 +12464,11 @@ static int __transmit_response(struct sip_pvt *p, const char *msg, const struct
+ 		}
+ 
+ 		if (p->owner && ast_channel_hangupcause(p->owner)) {
+-			add_header(&resp, "X-Asterisk-HangupCause", ast_cause2str(ast_channel_hangupcause(p->owner)));
+-			snprintf(buf, sizeof(buf), "%d", ast_channel_hangupcause(p->owner));
+-			add_header(&resp, "X-Asterisk-HangupCauseCode", buf);
++			if (!ast_test_flag(&p->flags[2], SIP_PAGE3_FUSIONCOM)) {
++				add_header(&resp, "X-Asterisk-HangupCause", ast_cause2str(ast_channel_hangupcause(p->owner)));
++				snprintf(buf, sizeof(buf), "%d", ast_channel_hangupcause(p->owner));
++				add_header(&resp, "X-Asterisk-HangupCauseCode", buf);
++			}
+ 		}
+ 	}
+ 	return send_response(p, &resp, reliable, seqno);
+@@ -13680,7 +13727,9 @@ static enum sip_result add_sdp(struct sip_request *resp, struct sip_pvt *p, int
+ 		ast_debug(3, "-- Done with adding codecs to SDP\n");
+ 
+ 		if (!p->owner || ast_channel_timingfd(p->owner) == -1) {
+-			ast_str_append(&a_audio, 0, "a=silenceSupp:off - - - -\r\n");
++			if (!ast_test_flag(&p->flags[2], SIP_PAGE3_FUSIONCOM)) {
++				ast_str_append(&a_audio, 0, "a=silenceSupp:off - - - -\r\n");
++			}
+ 		}
+ 
+ 		if (min_audio_packet_size) {
+@@ -13697,7 +13746,7 @@ static enum sip_result add_sdp(struct sip_request *resp, struct sip_pvt *p, int
+ 			ast_str_append(&a_text, 0, "a=ptime:%d\r\n", min_text_packet_size);
+ 		}
+ 
+-		if (max_audio_packet_size) {
++		if (max_audio_packet_size && !ast_test_flag(&p->flags[2], SIP_PAGE3_FUSIONCOM)) {
+ 			ast_str_append(&a_audio, 0, "a=maxptime:%d\r\n", max_audio_packet_size);
+ 		}
+ 
+@@ -14109,8 +14158,12 @@ static int transmit_reinvite_with_sdp(struct sip_pvt *p, int t38version, int old
+ 
+ 	reqprep(&req, p, ast_test_flag(&p->flags[0], SIP_REINVITE_UPDATE) ?  SIP_UPDATE : SIP_INVITE, 0, 1);
+ 
+-	add_header(&req, "Allow", ALLOWED_METHODS);
+-	add_supported(p, &req);
++	if (!ast_test_flag(&p->flags[2], SIP_PAGE3_FUSIONCOM)) {
++        add_header(&req, "Allow", ALLOWED_METHODS);
++        add_supported(p, &req);
++    } else {
++        add_header(&req, "Allow", ALLOWED_METHODS_F);
++    }
+ 	if (sipdebug) {
+ 		if (oldsdp == TRUE)
+ 			add_header(&req, "X-asterisk-Info", "SIP re-invite (Session-Timers)");
+@@ -14643,7 +14696,9 @@ static int transmit_invite(struct sip_pvt *p, int sipmethod, int sdp, int init,
+ 	if (p->options && p->options->auth) {
+ 		add_header(&req, p->options->authheader, p->options->auth);
+ 	}
+-	add_date(&req);
++	if (!ast_test_flag(&p->flags[2], SIP_PAGE3_FUSIONCOM)) {
++		add_date(&req);
++	}
+ 	if (sipmethod == SIP_REFER && p->refer) {	/* Call transfer */
+ 		if (!ast_strlen_zero(p->refer->refer_to)) {
+ 			add_header(&req, "Refer-To", p->refer->refer_to);
+@@ -14691,8 +14746,12 @@ static int transmit_invite(struct sip_pvt *p, int sipmethod, int sdp, int init,
+ 		add_header(&req, "Min-SE", i2astr);
+ 	}
+ 
+-	add_header(&req, "Allow", ALLOWED_METHODS);
+-	add_supported(p, &req);
++	if (!ast_test_flag(&p->flags[2], SIP_PAGE3_FUSIONCOM)) {
++		add_header(&req, "Allow", ALLOWED_METHODS);
++		add_supported(p, &req);
++	} else {
++		add_header(&req, "Allow", ALLOWED_METHODS_F);
++    }
+ 
+ 	if (p->owner && ((p->options && p->options->addsipheaders)
+ 				  || (p->refer && global_refer_addheaders))) {
+@@ -15602,6 +15661,10 @@ static void update_redirecting(struct sip_pvt *p, const void *data, size_t datal
+ 		return;
+ 	}
+ 
++	if (ast_test_flag(&p->flags[2], SIP_PAGE3_FUSIONCOM)) {
++		return;
++	}
++
+ 	respprep(&resp, p, "181 Call is being forwarded", &p->initreq);
+ 	add_diversion(&resp, p);
+ 	send_response(p, &resp, XMIT_UNRELIABLE, 0);
+@@ -15863,6 +15926,18 @@ static int sip_reg_timeout(const void *data)
+ 	}
+ 	/* If we have a limit, stop registration and give up */
+ 	r->timeout = -1;
++	/* Judgment of the user timeout detection, timeout detection */
++	if ((regl.timeout == 1) && (strcmp(regl.hostname, r->hostname) || strcmp(regl.username, r->username))) {
++		r->regstate = REG_STATE_TIMEOUT;
++		/* Detection in timeout, the case of a user other than yourself */
++		ao2_t_ref(r, -1, "Scheduled register timeout complete");
++		return 0;
++	} else if ((regl.timeout != 1) && (r->regstate == REG_STATE_REGSENT)){
++		ast_log(LOG_NOTICE, "   --  Timeout Account Retry.'%s@%s'\n",r->username, r->hostname);
++		regl.timeout = 1;
++		ast_copy_string(regl.hostname, r->hostname, sizeof(regl.hostname));
++		ast_copy_string(regl.username, r->username, sizeof(regl.username));
++	}
+ 	if (global_regattempts_max && r->regattempts >= global_regattempts_max) {
+ 		/* Ok, enough is enough. Don't try any more */
+ 		/* We could add an external notification here...
+@@ -16143,7 +16218,9 @@ static int transmit_register(struct sip_registry *r, int sipmethod, const char *
+ 	add_header(&req, "To", to);
+ 	add_header(&req, "Call-ID", p->callid);
+ 	add_header(&req, "CSeq", tmp);
+-	add_supported(p, &req);
++	if (!ast_test_flag(&p->flags[2], SIP_PAGE3_FUSIONCOM)) {
++		add_supported(p, &req);
++	}
+ 	if (!ast_strlen_zero(global_useragent))
+ 		add_header(&req, "User-Agent", global_useragent);
+ 
+@@ -16168,10 +16245,12 @@ static int transmit_register(struct sip_registry *r, int sipmethod, const char *
+ 		p->noncecount = ++r->noncecount;
+ 
+ 		memset(digest, 0, sizeof(digest));
+-		if(!build_reply_digest(p, sipmethod, digest, sizeof(digest))) {
+-			add_header(&req, "Authorization", digest);
+-		} else {
+-			ast_log(LOG_NOTICE, "No authorization available for authentication of registration to %s@%s\n", r->username, r->hostname);
++		if (!ast_test_flag(&p->flags[2], SIP_PAGE3_FUSIONCOM)) {
++			if(!build_reply_digest(p, sipmethod, digest, sizeof(digest))) {
++				add_header(&req, "Authorization", digest);
++			} else {
++				ast_log(LOG_NOTICE, "No authorization available for authentication of registration to %s@%s\n", r->username, r->hostname);
++			}
+ 		}
+ 	}
+ 
+@@ -16441,9 +16520,11 @@ static int transmit_request_with_auth(struct sip_pvt *p, int sipmethod, uint32_t
+ 			add_header(&resp, "Reason", buf);
+ 		}
+ 
+-		add_header(&resp, "X-Asterisk-HangupCause", ast_cause2str(p->hangupcause));
+-		snprintf(buf, sizeof(buf), "%d", p->hangupcause);
+-		add_header(&resp, "X-Asterisk-HangupCauseCode", buf);
++		if (!ast_test_flag(&p->flags[2], SIP_PAGE3_FUSIONCOM)) {
++			add_header(&resp, "X-Asterisk-HangupCause", ast_cause2str(p->hangupcause));
++			snprintf(buf, sizeof(buf), "%d", p->hangupcause);
++			add_header(&resp, "X-Asterisk-HangupCauseCode", buf);
++		}
+ 		break;
+ 	}
+ 	case SIP_MESSAGE:
+@@ -21015,6 +21096,7 @@ static char *_sip_show_peer(int type, int fd, struct mansession *s, const struct
+ 		}
+ 		ast_cli(fd, "  TrustIDOutbnd: %s\n", trust_id_outbound2str(ast_test_flag(&peer->flags[1], SIP_PAGE2_TRUST_ID_OUTBOUND)));
+ 		ast_cli(fd, "  Subscriptions: %s\n", AST_CLI_YESNO(ast_test_flag(&peer->flags[1], SIP_PAGE2_ALLOWSUBSCRIBE)));
++		ast_cli(fd, "  Use FUSION   : %s\n", AST_CLI_YESNO(ast_test_flag(&peer->flags[2], SIP_PAGE3_FUSIONCOM)));
+ 		ast_cli(fd, "  Overlap dial : %s\n", allowoverlap2str(ast_test_flag(&peer->flags[1], SIP_PAGE2_ALLOWOVERLAP)));
+ 		if (peer->outboundproxy)
+ 			ast_cli(fd, "  Outb. proxy  : %s %s\n", ast_strlen_zero(peer->outboundproxy->name) ? "<not set>" : peer->outboundproxy->name,
+@@ -21115,6 +21197,7 @@ static char *_sip_show_peer(int type, int fd, struct mansession *s, const struct
+ 		astman_append(s, "Call-limit: %d\r\n", peer->call_limit);
+ 		astman_append(s, "Busy-level: %d\r\n", peer->busy_level);
+ 		astman_append(s, "MaxCallBR: %d kbps\r\n", peer->maxcallbitrate);
++		astman_append(s, "Use FUSION: %s\r\n", AST_CLI_YESNO(ast_test_flag(&peer->flags[2], SIP_PAGE3_FUSIONCOM)));
+ 		astman_append(s, "Dynamic: %s\r\n", peer->host_dynamic?"Y":"N");
+ 		astman_append(s, "Callerid: %s\r\n", ast_callerid_merge(cbuf, sizeof(cbuf), peer->cid_name, peer->cid_num, ""));
+ 		astman_append(s, "RegExpire: %ld seconds\r\n", ast_sched_when(sched, peer->expire));
+@@ -21604,6 +21687,7 @@ static char *sip_show_settings(struct ast_cli_entry *e, int cmd, struct ast_cli_
+ 	ast_cli(a->fd, "  Match Auth Username:    %s\n", AST_CLI_YESNO(global_match_auth_username));
+ 	ast_cli(a->fd, "  Allow unknown access:   %s\n", AST_CLI_YESNO(sip_cfg.allowguest));
+ 	ast_cli(a->fd, "  Allow subscriptions:    %s\n", AST_CLI_YESNO(ast_test_flag(&global_flags[1], SIP_PAGE2_ALLOWSUBSCRIBE)));
++	ast_cli(a->fd, "  FUSION Communications:  %s\n", AST_CLI_YESNO(ast_test_flag(&global_flags[2], SIP_PAGE3_FUSIONCOM)));
+ 	ast_cli(a->fd, "  Allow overlap dialing:  %s\n", allowoverlap2str(ast_test_flag(&global_flags[1], SIP_PAGE2_ALLOWOVERLAP)));
+ 	ast_cli(a->fd, "  Allow promisc. redir:   %s\n", AST_CLI_YESNO(ast_test_flag(&global_flags[0], SIP_PROMISCREDIR)));
+ 	ast_cli(a->fd, "  Enable call counters:   %s\n", AST_CLI_YESNO(global_callcounter));
+@@ -22140,6 +22224,7 @@ static char *sip_show_channel(struct ast_cli_entry *e, int cmd, struct ast_cli_a
+ 			ast_cli(a->fd, "  T.38 support            %s\n", AST_CLI_YESNO(cur->udptl != NULL));
+ 			ast_cli(a->fd, "  Video support           %s\n", AST_CLI_YESNO(cur->vrtp != NULL));
+ 			ast_cli(a->fd, "  MaxCallBR:              %d kbps\n", cur->maxcallbitrate);
++			ast_cli(a->fd, "  Use FUSION:             %s\n", AST_CLI_YESNO(ast_test_flag(&cur->flags[2], SIP_PAGE3_FUSIONCOM)));
+ 			ast_cli(a->fd, "  Theoretical Address:    %s\n", ast_sockaddr_stringify(&cur->sa));
+ 			ast_cli(a->fd, "  Received Address:       %s\n", ast_sockaddr_stringify(&cur->recv));
+ 			ast_cli(a->fd, "  SIP Transfer mode:      %s\n", transfermode2str(cur->allowtransfer));
+@@ -23353,7 +23438,11 @@ static void check_pendings(struct sip_pvt *p)
+ 				ast_softhangup_nolock(p->owner, AST_SOFTHANGUP_DEV);
+ 			}
+ 			/* Perhaps there is an SD change INVITE outstanding */
+-			transmit_request_with_auth(p, SIP_BYE, 0, XMIT_RELIABLE, TRUE);
++			if (!ast_test_flag(&p->flags[2], SIP_PAGE3_FUSIONCOM)) {
++				transmit_request_with_auth(p, SIP_BYE, 0, XMIT_RELIABLE, TRUE);
++			} else {
++				transmit_request(p, SIP_BYE, 0, XMIT_RELIABLE, TRUE);
++			}
+ 			ast_clear_flag(&p->flags[0], SIP_PENDINGBYE | SIP_NEEDREINVITE);
+ 		}
+ 		sip_scheddestroy(p, DEFAULT_TRANS_TIMEOUT);
+@@ -23678,7 +23767,9 @@ static void handle_response_invite(struct sip_pvt *p, int resp, const char *rest
+ 		/* Store Route-set from provisional SIP responses so
+ 		 * early-dialog request can be routed properly
+ 		 * */
+-		parse_ok_contact(p, req);
++		if (!ast_test_flag(&p->flags[2], SIP_PAGE3_FUSIONCOM)) {
++			parse_ok_contact(p, req);
++		}
+ 		if (!reinvite) {
+ 			build_route(p, req, 1, resp);
+ 		}
+@@ -23735,7 +23826,9 @@ static void handle_response_invite(struct sip_pvt *p, int resp, const char *rest
+ 		/* Store Route-set from provisional SIP responses so
+ 		 * early-dialog request can be routed properly
+ 		 * */
+-		parse_ok_contact(p, req);
++		if (!ast_test_flag(&p->flags[2], SIP_PAGE3_FUSIONCOM)) {
++			parse_ok_contact(p, req);
++		}
+ 		if (!reinvite) {
+ 			build_route(p, req, 1, resp);
+ 		}
+@@ -23768,7 +23861,9 @@ static void handle_response_invite(struct sip_pvt *p, int resp, const char *rest
+ 		/* Store Route-set from provisional SIP responses so
+ 		 * early-dialog request can be routed properly
+ 		 * */
+-		parse_ok_contact(p, req);
++		if (!ast_test_flag(&p->flags[2], SIP_PAGE3_FUSIONCOM)) {
++			parse_ok_contact(p, req);
++		}
+ 		if (!reinvite) {
+ 			build_route(p, req, 1, resp);
+ 		}
+@@ -23983,10 +24078,11 @@ static void handle_response_invite(struct sip_pvt *p, int resp, const char *rest
+ 		/* Then we AUTH */
+ 		ast_string_field_set(p, theirtag, NULL);	/* forget their old tag, so we don't match tags when getting response */
+ 		if (!req->ignore) {
+-			if (p->authtries < MAX_AUTHTRIES) {
++			int max_authtries = ast_test_flag(&p->flags[2], SIP_PAGE3_FUSIONCOM) ? MAX_AUTHTRIES_F : MAX_AUTHTRIES;
++			if (p->authtries < max_authtries) {
+ 				p->invitestate = INV_CALLING;
+ 			}
+-			if (p->authtries == MAX_AUTHTRIES || do_proxy_auth(p, req, resp, SIP_INVITE, 1)) {
++			if (p->authtries == max_authtries || do_proxy_auth(p, req, resp, SIP_INVITE, 1)) {
+ 				ast_log(LOG_NOTICE, "Failed to authenticate on INVITE to '%s'\n", sip_get_header(&p->initreq, "From"));
+ 				pvt_set_needdestroy(p, "failed to authenticate on INVITE");
+ 				sip_alreadygone(p);
+@@ -24396,12 +24492,16 @@ static int handle_response_register(struct sip_pvt *p, int resp, const char *res
+ 	int expires, expires_ms;
+ 	struct sip_registry *r;
+ 	r = p->registry;
++	int max_authtries = ast_test_flag(&p->flags[2], SIP_PAGE3_FUSIONCOM) ? MAX_AUTHTRIES_F : MAX_AUTHTRIES;
++	int check = 0 ;
+ 
+ 	switch (resp) {
+ 	case 401:	/* Unauthorized */
+-		if (p->authtries == MAX_AUTHTRIES || do_register_auth(p, req, resp)) {
++		if (p->authtries == max_authtries || do_register_auth(p, req, resp)) {
+ 			ast_log(LOG_NOTICE, "Failed to authenticate on REGISTER to '%s@%s' (Tries %d)\n", p->registry->username, p->registry->hostname, p->authtries);
+ 			pvt_set_needdestroy(p, "failed to authenticate REGISTER");
++		} else {
++			check = 1;
+ 		}
+ 		break;
+ 	case 403:	/* Forbidden */
+@@ -24428,9 +24528,11 @@ static int handle_response_register(struct sip_pvt *p, int resp, const char *res
+ 		sip_publish_registry(r->username, r->hostname, regstate2str(r->regstate));
+ 		break;
+ 	case 407:	/* Proxy auth */
+-		if (p->authtries == MAX_AUTHTRIES || do_register_auth(p, req, resp)) {
++		if (p->authtries == max_authtries || do_register_auth(p, req, resp)) {
+ 			ast_log(LOG_NOTICE, "Failed to authenticate on REGISTER to '%s' (tries '%d')\n", sip_get_header(&p->initreq, "From"), p->authtries);
+ 			pvt_set_needdestroy(p, "failed to authenticate REGISTER");
++		} else {
++			check = 1;
+ 		}
+ 		break;
+ 	case 408:	/* Request timeout */
+@@ -24456,6 +24558,7 @@ static int handle_response_register(struct sip_pvt *p, int resp, const char *res
+ 		} else {
+ 			r->regstate = REG_STATE_UNREGISTERED;
+ 			transmit_register(r, SIP_REGISTER, NULL, NULL);
++			check = 1;
+ 		}
+ 		sip_publish_registry(r->username, r->hostname, regstate2str(r->regstate));
+ 		break;
+@@ -24498,6 +24601,12 @@ static int handle_response_register(struct sip_pvt *p, int resp, const char *res
+ 		 * figure out how long we got registered for
+ 		 * according to section 6.13 of RFC, contact headers override
+ 		 * expires headers, so check those first */
++		if ((regl.timeout == 1) && (!strcmp(regl.hostname, r->hostname) && !strcmp(regl.username, r->username))) {
++			ast_debug(4, "get register response retransRegister");
++			break;
++		} else {
++			check = 1;
++		}
+ 		expires = 0;
+ 
+ 		/* XXX todo: try to save the extra call */
+@@ -24533,7 +24642,11 @@ static int handle_response_register(struct sip_pvt *p, int resp, const char *res
+ 		if (expires <= EXPIRY_GUARD_LIMIT)
+ 			expires_ms -= MAX((expires_ms * EXPIRY_GUARD_PCT), EXPIRY_GUARD_MIN);
+ 		else
+-			expires_ms -= EXPIRY_GUARD_SECS * 1000;
++			if (!ast_test_flag(&p->flags[2], SIP_PAGE3_FUSIONCOM)) {
++				expires_ms -= EXPIRY_GUARD_SECS * 1000;
++			} else {
++				expires_ms -= (expires * 0.5) * 1000;
++			}
+ 		if (sipdebug)
+ 			ast_log(LOG_NOTICE, "Outbound Registration: Expiry for %s is %d sec (Scheduling reregistration in %d s)\n", r->hostname, expires, expires_ms/1000);
+ 
+@@ -24542,6 +24655,13 @@ static int handle_response_register(struct sip_pvt *p, int resp, const char *res
+ 		/* Schedule re-registration before we expire */
+ 		start_reregister_timeout(r, expires_ms);
+ 	}
++	if (check == 0 && regl.timeout == 1 &&
++		(!strcmp(regl.hostname, r->hostname) && !strcmp(regl.username, r->username))) {
++		sip_send_all_registers();
++		regl.timeout = 0;
++		ast_copy_string(regl.hostname, "", sizeof(regl.hostname));
++		ast_copy_string(regl.username, "", sizeof(regl.username));
++	}
+ 	return 1;
+ }
+ 
+@@ -24765,6 +24885,7 @@ static void handle_response(struct sip_pvt *p, int resp, const char *rest, struc
+ 	/* Skip the Cseq and its subsequent spaces */
+ 	const char *msg = ast_skip_blanks(ast_skip_nonblanks(c_copy));
+ 	int ack_res = FALSE;
++	int max_authtries = ast_test_flag(&p->flags[2], SIP_PAGE3_FUSIONCOM) ? MAX_AUTHTRIES_F : MAX_AUTHTRIES;
+ 
+ 	if (!msg)
+ 		msg = "";
+@@ -24913,7 +25034,7 @@ static void handle_response(struct sip_pvt *p, int resp, const char *rest, struc
+ 					ast_log(LOG_WARNING, "Asked to authenticate %s, to %s but we have no matching peer!\n",
+ 							msg, ast_sockaddr_stringify(&p->recv));
+ 					pvt_set_needdestroy(p, "unable to authenticate BYE");
+-				} else if ((p->authtries == MAX_AUTHTRIES) || do_proxy_auth(p, req, resp,  sipmethod, 0)) {
++				} else if ((p->authtries == max_authtries) || do_proxy_auth(p, req, resp,  sipmethod, 0)) {
+ 					ast_log(LOG_NOTICE, "Failed to authenticate on %s to '%s'\n", msg, sip_get_header(&p->initreq, "From"));
+ 					pvt_set_needdestroy(p, "failed to authenticate BYE");
+ 				}
+@@ -25157,7 +25278,7 @@ static void handle_response(struct sip_pvt *p, int resp, const char *rest, struc
+ 			if (sipmethod == SIP_INVITE)
+ 				handle_response_invite(p, resp, rest, req, seqno);
+ 			else if (sipmethod == SIP_BYE) {
+-				if (p->authtries == MAX_AUTHTRIES || do_proxy_auth(p, req, resp, sipmethod, 0)) {
++				if (p->authtries == max_authtries || do_proxy_auth(p, req, resp, sipmethod, 0)) {
+ 					ast_log(LOG_NOTICE, "Failed to authenticate on %s to '%s'\n", msg, sip_get_header(&p->initreq, "From"));
+ 					pvt_set_needdestroy(p, "failed to authenticate BYE");
+ 				}
+@@ -30801,6 +30922,9 @@ static int handle_common_options(struct ast_flags *flags, struct ast_flags *mask
+ 	} else if (!strcasecmp(v->name, "allowsubscribe")) {
+ 		ast_set_flag(&mask[1], SIP_PAGE2_ALLOWSUBSCRIBE);
+ 		ast_set2_flag(&flags[1], ast_true(v->value), SIP_PAGE2_ALLOWSUBSCRIBE);
++	} else if (!strcasecmp(v->name, "fusioncom")) {
++		ast_set_flag(&mask[2], SIP_PAGE3_FUSIONCOM);
++		ast_set2_flag(&flags[2], ast_true(v->value), SIP_PAGE3_FUSIONCOM);
+ 	} else if (!strcasecmp(v->name, "ignoresdpversion")) {
+ 		ast_set_flag(&mask[1], SIP_PAGE2_IGNORESDPVERSION);
+ 		ast_set2_flag(&flags[1], ast_true(v->value), SIP_PAGE2_IGNORESDPVERSION);
+@@ -31668,6 +31792,8 @@ static struct sip_peer *build_peer(const char *name, struct ast_variable *v_head
+ 				ast_set2_flag(&peer->flags[2], !strcasecmp(v->value, "32"), SIP_PAGE3_SRTP_TAG_32);
+ 			} else if (!strcasecmp(v->name, "snom_aoc_enabled")) {
+ 				ast_set2_flag(&peer->flags[2], ast_true(v->value), SIP_PAGE3_SNOM_AOC);
++			} else if (!strcasecmp(v->name, "fusioncom")) {
++				ast_set2_flag(&peer->flags[2], ast_true(v->value), SIP_PAGE3_FUSIONCOM);
+ 			} else if (!strcasecmp(v->name, "avpf")) {
+ 				ast_set2_flag(&peer->flags[2], ast_true(v->value), SIP_PAGE3_USE_AVPF);
+ 			} else if (!strcasecmp(v->name, "icesupport")) {
+@@ -31711,7 +31837,11 @@ static struct sip_peer *build_peer(const char *name, struct ast_variable *v_head
+ 			if (!strcasecmp(v->value, "no")) {
+ 				peer->maxms = 0;
+ 			} else if (!strcasecmp(v->value, "yes")) {
+-				peer->maxms = default_qualify ? default_qualify : DEFAULT_MAXMS;
++				if (!ast_test_flag(&peer->flags[2], SIP_PAGE3_FUSIONCOM)) {
++					peer->maxms = default_qualify ? default_qualify : DEFAULT_MAXMS;
++				} else {
++					peer->maxms = 0;
++				}
+ 			} else if (sscanf(v->value, "%30d", &peer->maxms) != 1) {
+ 				ast_log(LOG_WARNING, "Qualification of peer '%s' should be 'yes', 'no', or a number of milliseconds at line %d of sip.conf\n", peer->name, v->lineno);
+ 				peer->maxms = 0;
+@@ -32204,6 +32334,7 @@ static int reload_config(enum channelreloadreason reason)
+ 	sip_cfg.messagecontext[0] = '\0';
+ 	sip_cfg.accept_outofcall_message = DEFAULT_ACCEPT_OUTOFCALL_MESSAGE;
+ 	sip_cfg.allowsubscribe = FALSE;
++	sip_cfg.fusioncom = TRUE;
+ 	sip_cfg.disallowed_methods = SIP_UNKNOWN;
+ 	sip_cfg.contact_acl = NULL;		/* Reset the contact ACL */
+ 	snprintf(global_useragent, sizeof(global_useragent), "%s %s", DEFAULT_USERAGENT, ast_get_version());
+@@ -32231,6 +32362,7 @@ static int reload_config(enum channelreloadreason reason)
+ 	sip_cfg.allowtransfer = TRANSFER_OPENFORALL;	/* Merrily accept all transfers by default */
+ 	sip_cfg.rtautoclear = 120;
+ 	ast_set_flag(&global_flags[1], SIP_PAGE2_ALLOWSUBSCRIBE);	/* Default for all devices: TRUE */
++	ast_set_flag(&global_flags[2], SIP_PAGE3_FUSIONCOM);	/* Default for all devices: TRUE */
+ 	ast_set_flag(&global_flags[1], SIP_PAGE2_ALLOWOVERLAP_YES);	/* Default for all devices: Yes */
+ 	sip_cfg.peer_rtupdate = TRUE;
+ 	global_dynamic_exclude_static = 0;	/* Exclude static peers */
+@@ -32737,7 +32869,11 @@ static int reload_config(enum channelreloadreason reason)
+ 			if (!strcasecmp(v->value, "no")) {
+ 				default_qualify = 0;
+ 			} else if (!strcasecmp(v->value, "yes")) {
+-				default_qualify = DEFAULT_MAXMS;
++				if (!sip_cfg.fusioncom) {
++					default_qualify = DEFAULT_MAXMS;
++				} else {
++					default_qualify = 0;
++				}
+ 			} else if (sscanf(v->value, "%30d", &default_qualify) != 1) {
+ 				ast_log(LOG_WARNING, "Qualification default should be 'yes', 'no', or a number of milliseconds at line %d of sip.conf\n", v->lineno);
+ 				default_qualify = 0;
+@@ -33815,10 +33951,14 @@ static void sip_send_all_registers(void)
+ 	if (!ao2_container_count(registry_list)) {
+ 		return;
+ 	}
++#if 0
+ 	regspacing = default_expiry * 1000 / ao2_container_count(registry_list);
+ 	if (regspacing > 100) {
+ 		regspacing = 100;
+ 	}
++#else
++	regspacing = 100 * 10;
++#endif
+ 	ms = regspacing;
+ 
+ 	iter = ao2_iterator_init(registry_list, 0);
+diff --git a/channels/sip/include/sip.h b/channels/sip/include/sip.h
+index 850370c..b966d6b 100644
+--- a/channels/sip/include/sip.h
++++ b/channels/sip/include/sip.h
+@@ -100,6 +100,7 @@
+ #define DEFAULT_TRANS_TIMEOUT     -1     /*!< Use default SIP transaction timeout */
+ #define PROVIS_KEEPALIVE_TIMEOUT  60000  /*!< How long to wait before retransmitting a provisional response (rfc 3261 13.3.1.1) */
+ #define MAX_AUTHTRIES             3      /*!< Try authentication three times, then fail */
++#define MAX_AUTHTRIES_F           1
+ 
+ #define SIP_MAX_HEADERS           64     /*!< Max amount of SIP headers to read */
+ #define SIP_MAX_LINES             256    /*!< Max amount of lines in SIP attachment (like SDP) */
+@@ -164,6 +165,7 @@
+  *  allowsubscribe and allowrefer on in sip.conf.
+  */
+ #define ALLOWED_METHODS "INVITE, ACK, CANCEL, OPTIONS, BYE, REFER, SUBSCRIBE, NOTIFY, INFO, PUBLISH, MESSAGE"
++#define ALLOWED_METHODS_F "INVITE, ACK, CANCEL, BYE"
+ 
+ /*! \brief Standard SIP unsecure port for UDP and TCP from RFC 3261. DO NOT CHANGE THIS */
+ #define STANDARD_SIP_PORT	5060
+@@ -385,11 +387,13 @@
+ #define SIP_PAGE3_DISCARD_REMOTE_HOLD_RETRIEVAL  (1 << 8)  /*!< DGP: Stop telling the peer to start music on hold */
+ #define SIP_PAGE3_FORCE_AVP              (1 << 9)  /*!< DGP: Force 'RTP/AVP' for all streams, even DTLS */
+ #define SIP_PAGE3_RTCP_MUX               (1 << 10) /*!< DGP: Attempt to negotiate RFC 5761 RTCP multiplexing */
++#define SIP_PAGE3_FUSIONCOM              (1 << 11) /*!< GDP: Use Fusion Communications! */
+ 
+ #define SIP_PAGE3_FLAGS_TO_COPY \
+ 	(SIP_PAGE3_SNOM_AOC | SIP_PAGE3_SRTP_TAG_32 | SIP_PAGE3_NAT_AUTO_RPORT | SIP_PAGE3_NAT_AUTO_COMEDIA | \
+ 	 SIP_PAGE3_DIRECT_MEDIA_OUTGOING | SIP_PAGE3_USE_AVPF | SIP_PAGE3_ICE_SUPPORT | SIP_PAGE3_IGNORE_PREFCAPS | \
+-	 SIP_PAGE3_DISCARD_REMOTE_HOLD_RETRIEVAL | SIP_PAGE3_FORCE_AVP | SIP_PAGE3_RTCP_MUX)
++	 SIP_PAGE3_DISCARD_REMOTE_HOLD_RETRIEVAL | SIP_PAGE3_FORCE_AVP | SIP_PAGE3_RTCP_MUX |\
++	 SIP_PAGE3_FUSIONCOM)
+ 
+ #define CHECK_AUTH_BUF_INITLEN   256
+ 
+@@ -775,6 +779,7 @@ struct sip_settings {
+ 	int default_max_forwards;    /*!< Default max forwards (SIP Anti-loop) */
+ 	int websocket_write_timeout; /*!< Socket write timeout for websocket transports, in ms */
+ 	int websocket_enabled;       /*!< Are websockets enabled? */
++	int fusioncom;
+ };
+ 
+ struct ast_websocket;

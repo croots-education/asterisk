@@ -1,0 +1,33 @@
+#!/usr/bin/perl
+
+use strict;
+
+$| = 1;
+
+my %AGI;
+my $callerid;
+
+while(<STDIN>) {
+        chomp;
+        last unless length($_);
+        if(/^agi_(\w+):\s+(.*)$/) {
+                $AGI{$1} = $2;
+        }
+}
+
+if($AGI{'callerid'} =~ /\D/) {
+	($callerid = $AGI{'calleridname'}) =~ s/\s\S+$//;
+}
+elsif($AGI{'callerid'} =~ /^(0|81|\+81)\d*$/) {
+        ($callerid = $AGI{'callerid'}) =~ s/^(81|\+81)/0/;
+}
+elsif($AGI{'callerid'} =~ /^\d{8,}$/) {
+        $callerid = '0' . $AGI{'callerid'};
+}
+else {
+        $callerid = $AGI{'callerid'};
+}
+
+print "SET CALLERID \"$callerid\"<$callerid>\n";
+
+exit 1;

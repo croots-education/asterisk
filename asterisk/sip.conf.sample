@@ -1,0 +1,60 @@
+[general]
+maxexpiry=3600
+defaultexpiry=3600              ; 設定必須
+registertimeout=300
+context=incoming
+transport=udp
+udpbindaddr=0.0.0.0:5060
+disallow=all                    ; 設定必須
+allow=ulaw                      ; 設定必須
+dtmfmode=auto
+allowguest=yes
+ignoresdpversion=yes            ; IP電話サービスのI/F仕様
+
+; IP電話サービス(*1)用レジスタ
+; (*1) 楽天コミュニケーションズのIP加入電話サービス。
+register => 815012345678:9X8y7X6w@fusion1/815012345678
+
+; NAT環境の場合は次のオプションが必要になる場合があります。
+;externaddr (or externhost)
+;localnet
+
+[fusion1] ; IP電話サービス用
+; ※IP電話サービスは、OPTIONSメソッドをサポートしません。
+;   qualifyオプションはDefault(記述なし)か無効に設定してください。
+type=friend
+defaultuser=815012345678        ; 開通通知に記載されたSIPアカウント
+fromuser=815012345678           ; 開通通知に記載されたSIPアカウント
+secret=9X8y7X6w                 ; 開通通知に記載されたSIPパスワード
+directmedia=no
+context=incoming
+insecure=port,invite
+fromdomain=sip.fusioncom.co.jp  ; 開通通知に記載されたSIPドメイン名
+host=sip.fusioncom.co.jp        ; 開通通知に記載されたSIPドメイン名
+dtmfmode=inband                 ; inbandまたはauto
+allowsubscribe=no               ; 推奨
+nat=no                          ; IP電話サービスのI/F仕様
+
+[201] ; 内線用
+; ※セキュリティの観点からsecretオプションは複雑なパスワードの設定を
+;   推奨します。
+type=friend
+defaultuser=201
+secret=1a)2B%3c                 ; 8文字以上かつ記号を含めたパスワード
+directmedia=no
+host=dynamic
+context=default
+dtmfmode=auto
+fusioncom=no
+
+[202] ; 内線用
+; ※セキュリティの観点からsecretオプションは複雑なパスワードの設定を
+;   推奨します。
+type=friend
+defaultuser=202
+secret=1a(2B%3c                 ; 8文字以上かつ記号を含めたパスワード
+directmedia=no
+host=dynamic
+context=default
+dtmfmode=auto
+fusioncom=no
